@@ -4,6 +4,7 @@ affiliation: "University of Oxford"
 title: "Senior Research Associate"
 url: "https://sites.google.com/view/fquinz/home"
 role: "organiser"
+photo: "/WorkshopSite/images/organisers/FRANCESCO%20QUINZAN.jpg"
 order: 1
 ---
 

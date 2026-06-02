@@ -4,6 +4,7 @@ affiliation: "University of Milano-Bicocca"
 title: "Ph.D. Student"
 url: "https://valentinazangirolami.github.io/"
 role: "organiser"
+photo: "/WorkshopSite/images/organisers/Valentina%20Zangirolami.jpg"
 order: 5
 ---
 

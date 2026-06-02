@@ -4,6 +4,7 @@ affiliation: "Cornell University & Databricks AI"
 talkTitle: "Coverage, Exploration, and Robustness in Post-Training"
 url: "https://wensun.github.io/"
 role: "Assistant Professor"
+photo: "/WorkshopSite/images/speakers/Wen%20Sun.png"
 order: 5
 ---
 

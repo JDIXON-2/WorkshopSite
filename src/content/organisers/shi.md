@@ -4,6 +4,7 @@ affiliation: "London School of Economics and Political Science"
 title: "Associate Professor"
 url: "https://callmespring.github.io/"
 role: "organiser"
+photo: "/WorkshopSite/images/organisers/Chengchun%20Shi.jpg"
 order: 4
 ---
 

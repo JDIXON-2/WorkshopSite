@@ -4,6 +4,7 @@ affiliation: "University of Pennsylvania"
 talkTitle: "Rigorous Statistical Foundations for RLHF and Post-Training"
 url: "https://www.weijie-su.com/"
 role: "Associate Professor of Statistics and Data Science"
+photo: "/WorkshopSite/images/speakers/Weijie%20Su.jpg"
 order: 4
 ---
 

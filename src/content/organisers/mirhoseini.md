@@ -4,6 +4,7 @@ affiliation: "Stanford University"
 title: "Assistant Professor"
 url: "https://www.azaliamirhoseini.com/"
 role: "organiser"
+photo: "/WorkshopSite/images/organisers/Azalia%20Mirhoseini.png"
 order: 3
 ---
 

@@ -4,6 +4,7 @@ affiliation: "Max Planck Institute for Intelligent Systems"
 talkTitle: "Failure Modes and Evaluation Gaps in Post-Training Pipelines"
 url: "https://www.andriushchenko.me/"
 role: "Principal Investigator"
+photo: "/WorkshopSite/images/speakers/Maksym%20Andriushchenko.jpeg"
 order: 2
 ---
 

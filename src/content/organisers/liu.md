@@ -4,6 +4,7 @@ affiliation: "University of Warwick"
 title: "Assistant Professor"
 url: "https://www.lfhsgre.org/"
 role: "organiser"
+photo: "/WorkshopSite/images/organisers/Fanghui%20Liu.jpg"
 order: 2
 ---
 
