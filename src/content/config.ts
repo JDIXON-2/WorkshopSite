@@ -28,7 +28,7 @@ const schedule = defineCollection({
   schema: z.object({
     time: z.string(),
     title: z.string(),
-    type: z.enum(['talk', 'break', 'session', 'poster', 'panel', 'keynote', 'opening', 'closing']),
+    type: z.enum(['talk', 'break', 'session', 'poster', 'panel', 'talk', 'opening', 'closing']),
     speaker: z.string().optional(),
     order: z.number(),
   }),

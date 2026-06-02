@@ -1,5 +1,5 @@
 ---
-type SessionType = 'talk' | 'break' | 'session' | 'poster' | 'panel' | 'keynote' | 'opening' | 'closing';
+type SessionType = 'talk' | 'break' | 'session' | 'poster' | 'panel' | 'talk' | 'opening' | 'closing';
 
 interface Props {
   time: string;
@@ -11,7 +11,7 @@ interface Props {
 const { time, title, type, speaker } = Astro.props;
 
 const typeStyles: Record<SessionType, string> = {
-  keynote: 'bg-indigo-50 dark:bg-indigo-950/40 border-l-4 border-indigo-500',
+  talk: 'bg-indigo-50 dark:bg-indigo-950/40 border-l-4 border-indigo-500',
   talk:    'bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-400',
   session: 'bg-sky-50 dark:bg-sky-950/30 border-l-4 border-sky-400',
   poster:  'bg-violet-50 dark:bg-violet-950/30 border-l-4 border-violet-400',
@@ -22,7 +22,7 @@ const typeStyles: Record<SessionType, string> = {
 };
 
 const badge: Record<SessionType, string> = {
-  keynote: 'Keynote',
+  talk: 'talk',
   talk:    'Invited Talk',
   session: 'Papers',
   poster:  'Poster / Lunch',

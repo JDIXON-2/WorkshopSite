@@ -8,7 +8,7 @@ const items = (await getCollection('schedule')).sort((a, b) => a.data.order - b.
 
 <Layout title="Program">
   <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">Workshop Program</h1>
-  <p class="text-gray-500 dark:text-gray-400 mb-2">December 2026 &middot; Vancouver Convention Centre</p>
+  <p class="text-gray-500 dark:text-gray-400 mb-2">December 2026 &middot; Country Convention Centre</p>
   <p class="text-sm text-amber-600 dark:text-amber-400 mb-10">All times are in Pacific Standard Time (PST). Subject to change.</p>
 
   <div class="flex flex-col gap-2">
@@ -25,7 +25,7 @@ const items = (await getCollection('schedule')).sort((a, b) => a.data.order - b.
   <!-- Legend -->
   <div class="mt-8 flex flex-wrap gap-3 text-xs">
     {[
-      { label: 'Keynote',     color: 'bg-indigo-500' },
+      { label: 'talk',     color: 'bg-indigo-500' },
       { label: 'Invited Talk',color: 'bg-blue-400' },
       { label: 'Papers',      color: 'bg-sky-400' },
       { label: 'Poster',      color: 'bg-violet-400' },
