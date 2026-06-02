@@ -1,0 +1,46 @@
+{
+  "$ref": "#/definitions/schedule",
+  "definitions": {
+    "schedule": {
+      "type": "object",
+      "properties": {
+        "time": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "talk",
+            "break",
+            "session",
+            "poster",
+            "panel",
+            "keynote",
+            "opening",
+            "closing"
+          ]
+        },
+        "speaker": {
+          "type": "string"
+        },
+        "order": {
+          "type": "number"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "time",
+        "title",
+        "type",
+        "order"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

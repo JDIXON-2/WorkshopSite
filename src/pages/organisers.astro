@@ -1,0 +1,82 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const all = (await getCollection('organisers')).sort((a, b) => a.data.order - b.data.order);
+const organisers = all.filter(o => o.data.role === 'organiser');
+const advisory   = all.filter(o => o.data.role === 'advisory');
+
+const rendered = await Promise.all(all.map(async o => ({ id: o.id, ...await render(o) })));
+const bodyMap = Object.fromEntries(rendered.map(r => [r.id, r.Content]));
+---
+
+<Layout title="Organisers">
+  <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">Organising Committee</h1>
+  <p class="text-gray-500 dark:text-gray-400 mb-10">The team behind FLPT 2026.</p>
+
+  <section class="mb-12">
+    <h2 class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-5">Workshop Organisers</h2>
+    <div class="flex flex-col gap-5">
+      {organisers.map(o => {
+        const initials = o.data.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
+        const Content = bodyMap[o.id];
+        return (
+          <div class="flex gap-5 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 shadow-sm">
+            {o.data.photo ? (
+              <img src={o.data.photo} alt={o.data.name} class="w-14 h-14 rounded-full object-cover shrink-0 mt-0.5" />
+            ) : (
+              <div class="w-14 h-14 rounded-full shrink-0 mt-0.5 flex items-center justify-center text-base font-bold bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400">
+                {initials}
+              </div>
+            )}
+            <div class="min-w-0">
+              <div class="flex flex-wrap items-baseline gap-2">
+                {o.data.url ? (
+                  <a href={o.data.url} target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    {o.data.name}
+                  </a>
+                ) : (
+                  <span class="font-semibold text-gray-900 dark:text-gray-100">{o.data.name}</span>
+                )}
+                <span class="text-sm text-indigo-600 dark:text-indigo-400">{o.data.affiliation}</span>
+              </div>
+              {o.data.title && <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{o.data.title}</p>}
+              {Content && (
+                <div class="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed prose prose-sm prose-gray dark:prose-invert max-w-none">
+                  <Content />
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  {advisory.length > 0 && (
+    <section>
+      <h2 class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-5">Advisory Board</h2>
+      <div class="grid sm:grid-cols-3 gap-5">
+        {advisory.map(o => {
+          const initials = o.data.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
+          return (
+            <div class="flex flex-col items-center text-center rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 shadow-sm">
+              <div class="w-14 h-14 rounded-full mb-3 flex items-center justify-center text-base font-bold bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400">
+                {initials}
+              </div>
+              {o.data.url ? (
+                <a href={o.data.url} target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-900 dark:text-gray-100 text-sm hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  {o.data.name}
+                </a>
+              ) : (
+                <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">{o.data.name}</p>
+              )}
+              <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-0.5">{o.data.affiliation}</p>
+              {o.data.title && <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{o.data.title}</p>}
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  )}
+</Layout>

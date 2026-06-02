@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import SpeakerCard from '../components/SpeakerCard.astro';
+
+const speakers = (await getCollection('speakers')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title="Invited Speakers">
+  <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">Invited Speakers</h1>
+  <p class="text-gray-500 dark:text-gray-400 mb-2">All speakers listed below are <strong class="font-semibold text-gray-700 dark:text-gray-300">confirmed</strong>.</p>
+  <p class="text-sm text-gray-500 dark:text-gray-400 mb-10">
+    Together they represent substantial institutional and geographic diversity, with a balanced mix of junior and senior researchers.
+  </p>
+
+  <div class="grid sm:grid-cols-2 gap-6">
+    {speakers.map(s => (
+      <SpeakerCard
+        name={s.data.name}
+        affiliation={s.data.affiliation}
+        talkTitle={s.data.talkTitle}
+        role={s.data.role}
+        url={s.data.url}
+        photo={s.data.photo}
+        bio={s.body.trim() || undefined}
+      />
+    ))}
+  </div>
+</Layout>

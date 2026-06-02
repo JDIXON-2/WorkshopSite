@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import PaperCard from '../components/PaperCard.astro';
+
+const papers = (await getCollection('papers')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title="Accepted Papers">
+  <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">Accepted Papers</h1>
+  <p class="text-gray-500 dark:text-gray-400 mb-10">{papers.length} papers accepted for presentation at WLR 2026.</p>
+
+  <div class="flex flex-col gap-4">
+    {papers.map(p => (
+      <PaperCard
+        title={p.data.title}
+        authors={p.data.authors}
+        abstract={p.data.abstract}
+      />
+    ))}
+  </div>
+</Layout>

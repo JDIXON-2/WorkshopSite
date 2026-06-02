@@ -1,0 +1,43 @@
+---
+interface Props {
+  name: string;
+  affiliation: string;
+  talkTitle: string;
+  role?: string;
+  url?: string;
+  photo?: string;
+  bio?: string;
+}
+
+const { name, affiliation, talkTitle, role, url, photo, bio } = Astro.props;
+const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+---
+
+<div class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-md transition-shadow">
+  <div class="flex items-start gap-4 mb-4">
+    {photo ? (
+      <img
+        src={photo}
+        alt={name}
+        class="w-16 h-16 rounded-full object-cover shrink-0 ring-2 ring-indigo-100 dark:ring-indigo-900"
+      />
+    ) : (
+      <div class="w-16 h-16 rounded-full shrink-0 flex items-center justify-center text-xl font-bold ring-2 ring-indigo-100 dark:ring-indigo-900 bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400">
+        {initials}
+      </div>
+    )}
+    <div class="min-w-0">
+      {url ? (
+        <a href={url} target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+          {name}
+        </a>
+      ) : (
+        <p class="font-semibold text-gray-900 dark:text-gray-100">{name}</p>
+      )}
+      <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-0.5">{affiliation}</p>
+      {role && <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{role}</p>}
+    </div>
+  </div>
+  <p class="text-sm text-gray-600 dark:text-gray-400 italic leading-snug">&ldquo;{talkTitle}&rdquo;</p>
+  {bio && <p class="mt-3 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{bio}</p>}
+</div>

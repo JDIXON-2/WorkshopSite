@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="Home">
+  <!-- Hero -->
+  <section class="py-16 sm:py-24 text-center">
+    <p class="text-sm font-semibold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-4">
+      SomeConference 2026 Workshop
+    </p>
+    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight max-w-3xl mx-auto">
+      Foundations of LLM Post-Training<br class="hidden sm:block" /> in Changing Environments
+    </h1>
+    <p class="mt-4 text-lg text-indigo-600 dark:text-indigo-400 font-medium">
+      SomeConference 2026 &middot; Vancouver Convention Centre, Vancouver BC
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href={`${base}/call/`} class="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 text-sm font-semibold transition-colors shadow-sm">
+        Call for Papers &rarr;
+      </a>
+      <a href={`${base}/speakers/`} class="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900 px-5 py-2.5 text-sm font-semibold text-gray-700 dark:text-gray-300 transition-colors">
+        Invited Speakers
+      </a>
+    </div>
+  </section>
+
+  <!-- Key dates strip -->
+  <section class="grid sm:grid-cols-3 gap-4 mb-16">
+    {[
+      { label: 'Submission Deadline', date: 'September 2026' },
+      { label: 'Author Notification', date: 'October 2026' },
+      { label: 'Workshop Date',       date: 'December 2026' },
+    ].map(({ label, date }) => (
+      <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 text-center shadow-sm">
+        <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">{label}</p>
+        <p class="text-base font-semibold text-gray-900 dark:text-gray-100">{date}</p>
+      </div>
+    ))}
+  </section>
+
+  <!-- Abstract -->
+  <section class="mb-16">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About the Workshop</h2>
+    <div class="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+      <p>
+        Large language models (LLMs) are routinely adapted to downstream applications through
+        post-training methods, such as instruction tuning and domain adaptation. Yet in
+        real-world deployment, downstream tasks rarely remain fixed: objectives shift, data
+        distributions drift, feedback signals evolve, and evaluation standards change over time.
+        Post-training therefore becomes a process of repeated adaptation in non-stationary
+        environments.
+      </p>
+      <p>
+        Despite its central role in modern foundation models, the theoretical foundations of
+        this adaptive post-training paradigm remain limited. Current practices are largely
+        heuristic, with incomplete understanding of statistical identifiability, optimization
+        dynamics, robustness to misspecification, and trade-offs between adaptation and
+        capability preservation. These gaps are particularly consequential in safety-critical
+        settings, where unintended regressions or feedback loops may arise under evolving
+        conditions.
+      </p>
+      <p>
+        This workshop aims to develop principled foundations for LLM post-training under task
+        evolution. We bring together researchers from machine learning theory, reinforcement
+        learning, and AI safety to study preference feedback as data, objective design and
+        implicit bias, robustness and uncertainty quantification, adaptive data collection, and
+        the limits of modular and parameter-efficient updates.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quick links -->
+  <section class="grid sm:grid-cols-2 gap-4">
+    {[
+      { href: `${base}/call/`,       label: 'Call for Papers',      desc: 'Topics, submission guidelines, and key dates.' },
+      { href: `${base}/program/`,    label: 'Workshop Program',     desc: 'Full schedule for the day.' },
+      { href: `${base}/papers/`,     label: 'Accepted Papers',      desc: 'Browse the accepted submissions.' },
+      { href: `${base}/organisers/`, label: 'Organising Committee', desc: 'Meet the team behind the workshop.' },
+    ].map(({ href, label, desc }) => (
+      <a href={href} class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 hover:border-indigo-400 dark:hover:border-indigo-600 shadow-sm hover:shadow-md transition-all group">
+        <span class="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{label} &rarr;</span>
+        <span class="text-sm text-gray-500 dark:text-gray-400 mt-1">{desc}</span>
+      </a>
+    ))}
+  </section>
+</Layout>

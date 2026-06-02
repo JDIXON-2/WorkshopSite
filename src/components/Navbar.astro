@@ -1,0 +1,39 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const links = [
+  { href: `${base}/`, label: 'Home' },
+  { href: `${base}/call/`, label: 'Call for Papers' },
+  { href: `${base}/speakers/`, label: 'Speakers' },
+  { href: `${base}/program/`, label: 'Program' },
+  { href: `${base}/papers/`, label: 'Papers' },
+  { href: `${base}/organisers/`, label: 'Organisers' },
+  { href: `${base}/sponsors/`, label: 'Sponsors' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 border-b border-gray-200 dark:border-gray-800 bg-white/90 dark:bg-gray-950/90 backdrop-blur">
+  <nav class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center gap-1 overflow-x-auto">
+    <a href={`${base}/`} class="mr-4 text-base font-bold tracking-tight text-indigo-600 dark:text-indigo-400 shrink-0 whitespace-nowrap" aria-label="Home">
+      FLPT 2026
+    </a>
+    {links.map(({ href, label }) => {
+      const isActive = currentPath === href || (href !== `${base}/` && currentPath.startsWith(href));
+      return (
+        <a
+          href={href}
+          class:list={[
+            'px-3 py-1.5 rounded-md text-sm font-medium whitespace-nowrap transition-colors',
+            isActive
+              ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300'
+              : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800',
+          ]}
+        >
+          {label}
+        </a>
+      );
+    })}
+  </nav>
+</header>

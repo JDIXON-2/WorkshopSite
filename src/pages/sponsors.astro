@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+type Tier = 'platinum' | 'gold' | 'silver' | 'bronze';
+
+const all = (await getCollection('sponsors')).sort((a, b) => a.data.order - b.data.order);
+
+const tiers: Tier[] = ['platinum', 'gold', 'silver', 'bronze'];
+const tierLabels: Record<Tier, string> = {
+  platinum: 'Platinum',
+  gold: 'Gold',
+  silver: 'Silver',
+  bronze: 'Bronze',
+};
+const tierStyles: Record<Tier, string> = {
+  platinum: 'border-slate-300 dark:border-slate-600',
+  gold:     'border-yellow-300 dark:border-yellow-600',
+  silver:   'border-gray-300 dark:border-gray-600',
+  bronze:   'border-orange-300 dark:border-orange-700',
+};
+const tierBadge: Record<Tier, string> = {
+  platinum: 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300',
+  gold:     'bg-yellow-50 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400',
+  silver:   'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400',
+  bronze:   'bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400',
+};
+---
+
+<Layout title="Sponsors">
+  <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">Sponsors</h1>
+  <p class="text-gray-500 dark:text-gray-400 mb-10">We gratefully acknowledge the support of our sponsors.</p>
+
+  {tiers.map(tier => {
+    const group = all.filter(s => s.data.tier === tier);
+    if (group.length === 0) return null;
+    return (
+      <section class="mb-12">
+        <div class="flex items-center gap-3 mb-5">
+          <h2 class="text-lg font-bold text-gray-800 dark:text-gray-200">{tierLabels[tier]} Sponsors</h2>
+          <span class:list={['px-2.5 py-0.5 rounded-full text-xs font-semibold', tierBadge[tier]]}>{tierLabels[tier]}</span>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-5">
+          {group.map(s => (
+            <a
+              href={s.data.url ?? '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              class:list={['flex items-center justify-center rounded-xl border-2 bg-white dark:bg-gray-900 p-8 hover:shadow-md transition-shadow min-h-[120px]', tierStyles[tier]]}
+            >
+              {s.data.logo ? (
+                <img src={s.data.logo} alt={s.data.name} class="max-h-16 object-contain" />
+              ) : (
+                <span class="text-lg font-bold text-gray-400 dark:text-gray-600">{s.data.name}</span>
+              )}
+            </a>
+          ))}
+        </div>
+      </section>
+    );
+  })}
+
+  <section class="mt-8 rounded-xl border border-dashed border-gray-300 dark:border-gray-700 p-8 text-center">
+    <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-2">Interested in sponsoring WLR 2026?</h3>
+    <p class="text-sm text-gray-500 dark:text-gray-400">Contact us at <span class="text-indigo-600 dark:text-indigo-400">wlr2026@example.com</span> for our sponsorship prospectus.</p>
+  </section>
+</Layout>

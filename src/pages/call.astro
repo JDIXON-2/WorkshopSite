@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Call for Papers">
+  <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">Call for Papers</h1>
+  <p class="text-gray-500 dark:text-gray-400 mb-10">
+    Workshop on Foundations of LLM Post-Training in Changing Environments @ SomeConference 2026
+  </p>
+
+  <!-- Topics -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Topics of Interest</h2>
+    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+      We welcome submissions on any topic related to post-training of LLMs in non-stationary
+      or evolving environments, including but not limited to the following themes:
+    </p>
+    <div class="space-y-4">
+      {[
+        {
+          title: 'Preference feedback as data',
+          body: 'Statistical modeling of preference signals, including identifiability questions, heterogeneous annotators, varying feedback strength, and principled treatments of noise and misspecification.',
+        },
+        {
+          title: 'Objectives and optimization',
+          body: 'Theoretical analysis of post-training objectives and optimization procedures, including regularization, implicit bias, stability, and connections between different preference-based or verifier-guided update rules.',
+        },
+        {
+          title: 'Robustness and valid inference',
+          body: 'Conditions under which post-training updates are robust to modeling choices, data collection effects, or feedback errors, as well as methods for uncertainty quantification, calibration, and principled evaluation.',
+        },
+        {
+          title: 'Adaptive data collection and feedback loops',
+          body: 'Effects of sequential or adaptive data collection on post-training, including selection bias, feedback loops, active query design, and evolving standards or evaluation criteria.',
+        },
+        {
+          title: 'Adaptation mechanisms and limits',
+          body: 'Theoretical understanding of post-training mechanisms such as parameter-efficient adaptation, modular updates, or selective fine-tuning, including limits of adaptation, trade-offs with capability preservation, and safety-relevant failure modes.',
+        },
+      ].map(({ title, body }) => (
+        <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 shadow-sm">
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-1">{title}</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Key dates -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Key Dates</h2>
+    <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 dark:bg-gray-900 text-left">
+            <th class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Milestone</th>
+            <th class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Date</th>
+            <th class="px-5 py-3 font-semibold text-gray-700 dark:text-gray-300">Notes</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+          {[
+            { milestone: 'Submission Portal Opens',       date: 'TBA',                           notes: 'OpenReview' },
+            { milestone: 'Abstract Registration Deadline',date: 'TBA',                           notes: 'AoE' },
+            { milestone: 'Paper Submission Deadline',     date: 'September 2026 (TBA)',           notes: 'AoE — firm' },
+            { milestone: 'Review Period',                 date: 'September – October 2026',       notes: 'Double-blind' },
+            { milestone: 'Author Notification',           date: 'October 2026 (TBA)',             notes: '' },
+            { milestone: 'Camera-Ready Deadline',         date: 'November 2026 (TBA)',            notes: 'Non-archival' },
+            { milestone: 'Workshop Date',                 date: 'December 2026 (TBA)',            notes: 'Vancouver, BC' },
+          ].map(({ milestone, date, notes }) => (
+            <tr class="bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
+              <td class="px-5 py-3 font-medium text-gray-900 dark:text-gray-100">{milestone}</td>
+              <td class="px-5 py-3 text-indigo-600 dark:text-indigo-400 font-mono text-xs">{date}</td>
+              <td class="px-5 py-3 text-gray-500 dark:text-gray-400">{notes}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Submission instructions -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Submission Instructions</h2>
+    <div class="space-y-4">
+      {[
+        {
+          title: 'Format',
+          body: 'Papers should be submitted in PDF format using the SomeConference 2026 style file. Long papers may be up to 8 pages excluding references and appendices. Short papers (position papers, work in progress) are up to 4 pages. There is no page limit on references or supplementary material.',
+        },
+        {
+          title: 'Review Process',
+          body: 'All submissions will undergo double-blind peer review. Authors should anonymise their submissions and avoid self-identifying references in the main paper. Reviewers will evaluate novelty, significance, technical quality, and clarity.',
+        },
+        {
+          title: 'Dual-submission Policy',
+          body: 'FLPT 2026 is a non-archival workshop. We welcome submissions of work currently under review at other venues and work that has previously been published, provided it has been updated or recontextualised for the workshop audience. Please disclose prior publication in the submission form.',
+        },
+        {
+          title: 'Submission Portal',
+          body: 'Submissions will be handled via OpenReview. The link will be published on this page when the portal opens.',
+        },
+      ].map(({ title, body }) => (
+        <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 shadow-sm">
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">{title}</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
