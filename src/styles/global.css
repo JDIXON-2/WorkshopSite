@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
+/* Class-based dark mode — toggled by JS */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
-  :root {
-    color-scheme: light dark;
-  }
   html {
     scroll-behavior: smooth;
   }
