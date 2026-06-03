@@ -35,6 +35,41 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     />
   </div>
 
+  <!-- Partners -->
+  <section class="mb-16">
+    <p class="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6">In Partnership With</p>
+    <div class="flex flex-wrap items-center justify-center gap-10">
+      <a href="https://warwick.ac.uk" target="_blank" rel="noopener noreferrer">
+        <img
+          src={`${base}/images/uni%20logos/University_of_Warwick/University_of_Warwick_idvrMZjjfH_1.png`}
+          alt="University of Warwick"
+          class="h-10 object-contain dark:invert"
+        />
+      </a>
+      <div class="h-10 w-px bg-gray-200 dark:bg-gray-700"></div>
+      <a href="https://www.ox.ac.uk" target="_blank" rel="noopener noreferrer">
+        <img
+          src={`${base}/images/uni%20logos/oxford/ox-ac-uk-wordmark.png`}
+          alt="University of Oxford"
+          class="h-10 object-contain dark:invert"
+        />
+      </a>
+      <div class="h-10 w-px bg-gray-200 dark:bg-gray-700"></div>
+      <a href="https://www.ellis.ox.ac.uk/home" target="_blank" rel="noopener noreferrer">
+        <img
+          src={`${base}/images/ellis_logos/ellis-logo_horizontal_black_2023-OXFORD.png`}
+          alt="Ellison Institute of Technology Oxford"
+          class="block dark:hidden h-10 object-contain"
+        />
+        <img
+          src={`${base}/images/ellis_logos/ellis-logo_horizontal_white_2023-OXFORD.png`}
+          alt="Ellison Institute of Technology Oxford"
+          class="hidden dark:block h-10 object-contain"
+        />
+      </a>
+    </div>
+  </section>
+
   <!-- Key dates strip -->
   <section class="grid sm:grid-cols-3 gap-4 mb-16">
     {[

@@ -40,7 +40,38 @@ const {
       <slot />
     </main>
     <footer class="border-t border-gray-200 dark:border-gray-800 mt-16">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500 dark:text-gray-400">
+      <!-- Partner logos -->
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 pt-8 pb-4 flex flex-wrap items-center justify-center gap-8">
+        <span class="text-xs font-medium text-gray-400 dark:text-gray-500">In partnership with</span>
+        <a href="https://warwick.ac.uk" target="_blank" rel="noopener noreferrer">
+          <img
+            src={`${base}/images/uni%20logos/University_of_Warwick/University_of_Warwick_idvrMZjjfH_1.png`}
+            alt="University of Warwick"
+            class="h-7 object-contain opacity-70 hover:opacity-100 transition-opacity dark:invert"
+          />
+        </a>
+        <a href="https://www.ox.ac.uk" target="_blank" rel="noopener noreferrer">
+          <img
+            src={`${base}/images/uni%20logos/oxford/ox-ac-uk-wordmark.png`}
+            alt="University of Oxford"
+            class="h-7 object-contain opacity-70 hover:opacity-100 transition-opacity dark:invert"
+          />
+        </a>
+        <a href="https://www.ellis.ox.ac.uk/home" target="_blank" rel="noopener noreferrer">
+          <img
+            src={`${base}/images/ellis_logos/ellis-logo_horizontal_black_2023-OXFORD.png`}
+            alt="Ellison Institute of Technology Oxford"
+            class="block dark:hidden h-7 object-contain opacity-70 hover:opacity-100 transition-opacity"
+          />
+          <img
+            src={`${base}/images/ellis_logos/ellis-logo_horizontal_white_2023-OXFORD.png`}
+            alt="Ellison Institute of Technology Oxford"
+            class="hidden dark:block h-7 object-contain opacity-70 hover:opacity-100 transition-opacity"
+          />
+        </a>
+      </div>
+      <!-- Footer text -->
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 py-4 border-t border-gray-100 dark:border-gray-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500 dark:text-gray-400">
         <p>Foundations of LLM Post-Training in Changing Environments &mdash; SomeConference 2026</p>
         <div class="text-right">
           <p>Contact: <a href="mailto:flpt2026@example.com" class="hover:underline">flpt2026@example.com</a></p>
