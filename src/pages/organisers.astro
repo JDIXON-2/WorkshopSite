@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import { affiliationUrls } from '../data/affiliations';
 
 const all = (await getCollection('organisers')).sort((a, b) => a.data.order - b.data.order);
 const organisers = all.filter(o => o.data.role === 'organiser');
@@ -38,7 +39,11 @@ const bodyMap = Object.fromEntries(rendered.map(r => [r.id, r.Content]));
                 ) : (
                   <span class="font-semibold text-gray-900 dark:text-gray-100">{o.data.name}</span>
                 )}
-                <span class="text-sm text-indigo-600 dark:text-indigo-400">{o.data.affiliation}</span>
+                {affiliationUrls[o.data.affiliation] ? (
+                  <a href={affiliationUrls[o.data.affiliation]} target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 dark:text-indigo-400 hover:underline">{o.data.affiliation}</a>
+                ) : (
+                  <span class="text-sm text-indigo-600 dark:text-indigo-400">{o.data.affiliation}</span>
+                )}
               </div>
               {o.data.title && <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{o.data.title}</p>}
               {Content && (
@@ -71,7 +76,11 @@ const bodyMap = Object.fromEntries(rendered.map(r => [r.id, r.Content]));
               ) : (
                 <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">{o.data.name}</p>
               )}
-              <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-0.5">{o.data.affiliation}</p>
+              {affiliationUrls[o.data.affiliation] ? (
+                <a href={affiliationUrls[o.data.affiliation]} target="_blank" rel="noopener noreferrer" class="text-xs text-indigo-600 dark:text-indigo-400 mt-0.5 hover:underline">{o.data.affiliation}</a>
+              ) : (
+                <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-0.5">{o.data.affiliation}</p>
+              )}
               {o.data.title && <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{o.data.title}</p>}
             </div>
           );

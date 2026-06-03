@@ -1,4 +1,6 @@
 ---
+import { affiliationUrls } from '../data/affiliations';
+
 interface Props {
   name: string;
   affiliation: string;
@@ -10,6 +12,7 @@ interface Props {
 }
 
 const { name, affiliation, talkTitle, role, url, photo, bio } = Astro.props;
+const affiliationUrl = affiliationUrls[affiliation];
 const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
 ---
 
@@ -34,7 +37,11 @@ const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase
       ) : (
         <p class="font-semibold text-gray-900 dark:text-gray-100">{name}</p>
       )}
-      <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-0.5">{affiliation}</p>
+      {affiliationUrl ? (
+        <a href={affiliationUrl} target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 dark:text-indigo-400 mt-0.5 hover:underline">{affiliation}</a>
+      ) : (
+        <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-0.5">{affiliation}</p>
+      )}
       {role && <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{role}</p>}
     </div>
   </div>
