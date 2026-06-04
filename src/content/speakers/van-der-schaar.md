@@ -4,7 +4,7 @@ affiliation: "University of Cambridge"
 talkTitle: "WIP"
 role: "John Humphrey Plummer Professor of Machine Learning, Artificial Intelligence and Medicine"
 url: "https://www.vanderschaar-lab.com/prof-mihaela-van-der-schaar/"
-photo: "/WorkshopSite/images/speakers/Mihaela%20van%20der%20Schaar.webp"
+photo: "https://www.vanderschaar-lab.com/wp-content/uploads/2023/04/mihaela-2023-1.png"
 order: 1
 ---
 

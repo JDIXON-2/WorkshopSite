@@ -4,7 +4,7 @@ affiliation: "University of Zurich"
 talkTitle: "WIP"
 role: "Assistant Professor in AI for Cyber-Physical Systems"
 url: "https://www.ifi.uzh.ch/en/alpi/people/ramponi.html"
-photo: "/WorkshopSite/images/speakers/Giorgia%20Ramponi.jpeg"
+photo: "https://www.ifi.uzh.ch/contacts/ifi/alpi/gramponi/photo/gionew.jpeg.jpeg"
 order: 3
 ---
 

@@ -7,4 +7,7 @@ export const affiliationUrls: Record<string, string> = {
   'Stanford University':                           'https://www.stanford.edu',
   'London School of Economics and Political Science': 'https://www.lse.ac.uk',
   'University of Milano-Bicocca':                  'https://en.unimib.it',
+  'École Normale Supérieure':                      'https://www.ens.psl.eu',
+  'INRIA':                                         'https://www.inria.fr/en',
+  'Google DeepMind':                               'https://deepmind.google',
 };

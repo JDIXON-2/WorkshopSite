@@ -14,7 +14,8 @@
           "type": "string",
           "enum": [
             "organiser",
-            "advisory"
+            "advisory",
+            "volunteer"
           ]
         },
         "title": {

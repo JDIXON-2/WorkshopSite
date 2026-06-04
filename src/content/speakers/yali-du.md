@@ -4,7 +4,7 @@ affiliation: "King's College London"
 talkTitle: "WIP"
 role: "Senior Lecturer (Associate Professor) in AI"
 url: "https://yalidu.github.io"
-photo: "/WorkshopSite/images/speakers/Yali%20Du.png"
+photo: "https://yalidu.github.io/images/yalidu.png"
 order: 2
 ---
 

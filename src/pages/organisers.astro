@@ -6,6 +6,7 @@ import { affiliationUrls } from '../data/affiliations';
 const all = (await getCollection('organisers')).sort((a, b) => a.data.order - b.data.order);
 const organisers = all.filter(o => o.data.role === 'organiser');
 const advisory   = all.filter(o => o.data.role === 'advisory');
+const volunteers = all.filter(o => o.data.role === 'volunteer');
 
 const rendered = await Promise.all(all.map(async o => ({ id: o.id, ...await render(o) })));
 const bodyMap = Object.fromEntries(rendered.map(r => [r.id, r.Content]));
@@ -15,6 +16,7 @@ const bodyMap = Object.fromEntries(rendered.map(r => [r.id, r.Content]));
   <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">Organising Committee</h1>
   <p class="text-gray-500 dark:text-gray-400 mb-10">The team behind FLPT 2026.</p>
 
+  <!-- Main organisers -->
   <section class="mb-12">
     <h2 class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-5">Workshop Organisers</h2>
     <div class="flex flex-col gap-5">
@@ -58,8 +60,9 @@ const bodyMap = Object.fromEntries(rendered.map(r => [r.id, r.Content]));
     </div>
   </section>
 
+  <!-- Advisory board -->
   {advisory.length > 0 && (
-    <section>
+    <section class="mb-12">
       <h2 class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-5">Advisory Board</h2>
       <div class="grid sm:grid-cols-3 gap-5">
         {advisory.map(o => {
@@ -82,6 +85,46 @@ const bodyMap = Object.fromEntries(rendered.map(r => [r.id, r.Content]));
                 <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-0.5">{o.data.affiliation}</p>
               )}
               {o.data.title && <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{o.data.title}</p>}
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  <!-- Student volunteer organisers -->
+  {volunteers.length > 0 && (
+    <section>
+      <h2 class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-5">Student Volunteer Organisers</h2>
+      <div class="flex flex-col gap-3">
+        {volunteers.map(o => {
+          const initials = o.data.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
+          return (
+            <div class="flex items-center gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-5 py-4 shadow-sm">
+              {o.data.photo ? (
+                <img src={o.data.photo} alt={o.data.name} class="w-10 h-10 rounded-full object-cover shrink-0" />
+              ) : (
+                <div class="w-10 h-10 rounded-full shrink-0 flex items-center justify-center text-sm font-bold bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400">
+                  {initials}
+                </div>
+              )}
+              <div>
+                <div class="flex flex-wrap items-baseline gap-2">
+                  {o.data.url ? (
+                    <a href={o.data.url} target="_blank" rel="noopener noreferrer" class="font-semibold text-sm text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                      {o.data.name}
+                    </a>
+                  ) : (
+                    <span class="font-semibold text-sm text-gray-900 dark:text-gray-100">{o.data.name}</span>
+                  )}
+                  {affiliationUrls[o.data.affiliation] ? (
+                    <a href={affiliationUrls[o.data.affiliation]} target="_blank" rel="noopener noreferrer" class="text-xs text-indigo-600 dark:text-indigo-400 hover:underline">{o.data.affiliation}</a>
+                  ) : (
+                    <span class="text-xs text-indigo-600 dark:text-indigo-400">{o.data.affiliation}</span>
+                  )}
+                </div>
+                {o.data.title && <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{o.data.title}</p>}
+              </div>
             </div>
           );
         })}

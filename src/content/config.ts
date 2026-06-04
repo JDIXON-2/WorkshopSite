@@ -39,7 +39,7 @@ const organisers = defineCollection({
   schema: z.object({
     name: z.string(),
     affiliation: z.string(),
-    role: z.enum(['organiser', 'advisory']),
+    role: z.enum(['organiser', 'advisory', 'volunteer']),
     title: z.string().optional(),
     url: z.string().url().optional(),
     photo: z.string().optional(),
