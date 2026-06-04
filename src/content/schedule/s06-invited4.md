@@ -1,7 +1,6 @@
 ---
 time: "11:55 – 12:40"
-title: "Invited Talk: Rigorous Statistical Foundations for RLHF and Post-Training"
+title: "Invited Talk: TBA"
 type: "talk"
-speaker: "Weijie Su (University of Pennsylvania)"
 order: 6
 ---

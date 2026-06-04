@@ -30,19 +30,21 @@ const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase
       </div>
     )}
     <div class="min-w-0">
-      {url ? (
-        <a href={url} target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-          {name}
-        </a>
-      ) : (
-        <p class="font-semibold text-gray-900 dark:text-gray-100">{name}</p>
-      )}
+      <div class="flex flex-wrap items-baseline gap-x-2">
+        {url ? (
+          <a href={url} target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+            {name}
+          </a>
+        ) : (
+          <span class="font-semibold text-gray-900 dark:text-gray-100">{name}</span>
+        )}
+        {role && <span class="text-xs text-gray-400 dark:text-gray-500">{role}</span>}
+      </div>
       {affiliationUrl ? (
         <a href={affiliationUrl} target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 dark:text-indigo-400 mt-0.5 hover:underline">{affiliation}</a>
       ) : (
         <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-0.5">{affiliation}</p>
       )}
-      {role && <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{role}</p>}
     </div>
   </div>
   <p class="text-sm text-gray-600 dark:text-gray-400 italic leading-snug">&ldquo;{talkTitle}&rdquo;</p>

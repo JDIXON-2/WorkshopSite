@@ -1,7 +1,7 @@
 ---
 time: "11:10 – 11:55"
-title: "Invited Talk: Statistical–Computational Trade-offs in Interactive LLM Training"
+title: "Invited Talk: Reinforcement and Imitation Learning in Multi-Agent Systems"
 type: "talk"
-speaker: "Dylan Foster (Microsoft Research)"
+speaker: "Giorgia Ramponi (University of Zurich)"
 order: 5
 ---

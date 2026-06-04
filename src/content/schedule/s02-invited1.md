@@ -1,7 +1,7 @@
 ---
 time: "09:10 – 09:55"
-title: "Invited Talk: Multi-Agent Preference Modeling and Strategic Alignment"
+title: "Invited Talk: Machine Learning for Medicine and Adaptive Decision-Making"
 type: "talk"
-speaker: "Bo An (NTU)"
+speaker: "Mihaela van der Schaar (University of Cambridge)"
 order: 2
 ---
