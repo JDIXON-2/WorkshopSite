@@ -99,8 +99,9 @@ const bodyMap = Object.fromEntries(rendered.map(r => [r.id, r.Content]));
       <div class="flex flex-col gap-3">
         {volunteers.map(o => {
           const initials = o.data.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
+          const Content = bodyMap[o.id];
           return (
-            <div class="flex items-center gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-5 py-4 shadow-sm">
+            <div class="flex items-start gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-5 py-4 shadow-sm">
               {o.data.photo ? (
                 <img src={o.data.photo} alt={o.data.name} class="w-10 h-10 rounded-full object-cover shrink-0" />
               ) : (
@@ -124,6 +125,11 @@ const bodyMap = Object.fromEntries(rendered.map(r => [r.id, r.Content]));
                   )}
                 </div>
                 {o.data.title && <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{o.data.title}</p>}
+                {Content && (
+                  <div class="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed prose prose-sm prose-gray dark:prose-invert max-w-none">
+                    <Content />
+                  </div>
+                )}
               </div>
             </div>
           );
