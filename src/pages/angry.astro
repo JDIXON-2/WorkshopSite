@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="Nice Try">
+  <div class="flex flex-col items-center justify-center text-center py-24 gap-6">
+    <img
+      src="https://cdn001.tintin.com/public/tintin/img/news/6370/10_LICORNE%20P46%20C1.jpg"
+      alt="Nice try"
+      class="max-w-sm w-full rounded-2xl shadow-md object-cover"
+    />
+    <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">Nice Try</h1>
+    <p class="text-gray-500 dark:text-gray-400 max-w-md">
+      Path traversal isn't going to work here. Head back to safety.
+    </p>
+    <a
+      href={`${base}/`}
+      class="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 text-sm font-semibold transition-colors shadow-sm"
+    >
+      &larr; Back to Home
+    </a>
+  </div>
+</Layout>

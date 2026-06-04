@@ -33,6 +33,11 @@ const {
         }
       })();
     </script>
+    <script define:vars={{ base }}>
+      if (window.location.href.indexOf('..') !== -1) {
+        window.location.replace(window.location.origin + base + '/angry/');
+      }
+    </script>
   </head>
   <body class="flex flex-col min-h-screen font-sans antialiased">
     <Navbar />
