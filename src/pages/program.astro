@@ -21,8 +21,22 @@ const items = (await getCollection('schedule')).sort((a, b) => a.data.order - b.
       Add to Calendar (.ics)
     </a>
   </div>
-  <p class="text-gray-500 dark:text-gray-400 mb-2">December 2026 &middot; Country Convention Centre</p>
-  <p class="text-sm text-amber-600 dark:text-amber-400 mb-10">All times are in Pacific Standard Time (PST). Subject to change.</p>
+  <p class="text-gray-500 dark:text-gray-400 mb-2">December 2026 &middot; Paris, France</p>
+  <p class="text-sm text-amber-600 dark:text-amber-400 mb-6">All times are in Pacific Standard Time (PST). Subject to change.</p>
+
+  <!-- Schedule overview -->
+  <div class="grid sm:grid-cols-3 gap-4 mb-10">
+    {[
+      { label: 'Invited Talks',      detail: '5 × 40 min + Q&A' },
+      { label: 'Contributed Talks',  detail: '5 × 10 min presentations' },
+      { label: 'Poster Sessions',    detail: '2 × 60 min' },
+    ].map(({ label, detail }) => (
+      <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4 shadow-sm text-center">
+        <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">{label}</p>
+        <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">{detail}</p>
+      </div>
+    ))}
+  </div>
 
   <div class="flex flex-col gap-2">
     {items.map(item => (

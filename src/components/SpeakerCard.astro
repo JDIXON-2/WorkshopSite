@@ -6,12 +6,13 @@ interface Props {
   affiliation: string;
   talkTitle: string;
   role?: string;
+  confirmed?: boolean;
   url?: string;
   photo?: string;
   bio?: string;
 }
 
-const { name, affiliation, talkTitle, role, url, photo, bio } = Astro.props;
+const { name, affiliation, talkTitle, role, confirmed, url, photo, bio } = Astro.props;
 const affiliationUrl = affiliationUrls[affiliation];
 const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
 ---
@@ -37,6 +38,11 @@ const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase
           </a>
         ) : (
           <span class="font-semibold text-gray-900 dark:text-gray-100">{name}</span>
+        )}
+        {confirmed && (
+          <span class="inline-flex items-center rounded-full bg-green-50 dark:bg-green-950 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-400 ring-1 ring-inset ring-green-600/20 dark:ring-green-400/20">
+            Confirmed
+          </span>
         )}
         {role && <span class="text-xs text-gray-400 dark:text-gray-500">{role}</span>}
       </div>

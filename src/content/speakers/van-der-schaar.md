@@ -2,10 +2,11 @@
 name: "Mihaela van der Schaar"
 affiliation: "University of Cambridge"
 talkTitle: "WIP"
-role: "John Humphrey Plummer Professor of Machine Learning, Artificial Intelligence and Medicine"
+role: "John Humphrey Plummer Professor"
+confirmed: true
 url: "https://www.vanderschaar-lab.com/prof-mihaela-van-der-schaar/"
 photo: "https://www.vanderschaar-lab.com/wp-content/uploads/2023/04/mihaela-2023-1.png"
 order: 1
 ---
 
-Mihaela van der Schaar leads the van der Schaar Lab at Cambridge and founded the Cambridge Centre for AI in Medicine (CCAIM). A Fellow of the Royal Society (2024) and IEEE Fellow (2009), she is recognised as the most-cited female AI researcher in the UK. Her honours include the Johann Anton Merck Award (2024), the Oon Prize on Preventative Medicine, and an NSF CAREER Award. She holds 35 US patents, has contributed to over 45 international standards, and was a Turing Fellow at the Alan Turing Institute from 2016–2024.
+Known for her work on machine learning for dynamic, real-world decision-making; she contributes perspectives on adaptive methods, uncertainty quantification, and principled evaluation, key themes around post-training under changing conditions.

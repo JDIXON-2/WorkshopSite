@@ -16,6 +16,10 @@
         "role": {
           "type": "string"
         },
+        "confirmed": {
+          "type": "boolean",
+          "default": false
+        },
         "url": {
           "type": "string",
           "format": "uri"

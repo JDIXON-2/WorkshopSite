@@ -8,13 +8,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <!-- Hero -->
   <section class="py-16 sm:py-24 text-center">
     <p class="text-sm font-semibold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-4">
-      SomeConference 2026 Workshop
+      NeurIPS 2026 Workshop
     </p>
     <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight max-w-3xl mx-auto">
       Foundations of LLM Post-Training<br class="hidden sm:block" /> in Changing Environments
     </h1>
     <p class="mt-4 text-lg text-indigo-600 dark:text-indigo-400 font-medium">
-      SomeConference 2026 &middot; Country Convention Centre, Country BC
+      <a href="https://neurips.cc" target="_blank" rel="noopener noreferrer" class="hover:underline">NeurIPS</a> 2026 &middot; Paris, France
     </p>
     <div class="mt-8 flex flex-wrap justify-center gap-3">
       <a href={`${base}/call/`} class="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 text-sm font-semibold transition-colors shadow-sm">
@@ -98,27 +98,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <div class="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed text-base">
       <p>
         Large language models (LLMs) are routinely adapted to downstream applications through
-        post-training methods, such as instruction tuning and domain adaptation. Yet in
+        post-training methods, such as instruction tuning and domain adaption. Yet in
         real-world deployment, downstream tasks rarely remain fixed: objectives shift, data
         distributions drift, feedback signals evolve, and evaluation standards change over time.
         Post-training therefore becomes a process of repeated adaptation in non-stationary
-        environments.
-      </p>
-      <p>
-        Despite its central role in modern foundation models, the theoretical foundations of
-        this adaptive post-training paradigm remain limited. Current practices are largely
-        heuristic, with incomplete understanding of statistical identifiability, optimization
-        dynamics, robustness to misspecification, and trade-offs between adaptation and
-        capability preservation. These gaps are particularly consequential in safety-critical
+        environments. Despite its central role in modern foundation models, the theoretical
+        foundations of this adaptive post-training paradigm remain limited. Current practices
+        are largely heuristic, with incomplete understanding of statistical identifiability,
+        optimization dynamics, robustness to misspecification, and trade-offs between adaptation
+        and capability preservation. These gaps are particularly consequential in safety-critical
         settings, where unintended regressions or feedback loops may arise under evolving
-        conditions.
-      </p>
-      <p>
-        This workshop aims to develop principled foundations for LLM post-training under task
-        evolution. We bring together researchers from machine learning theory, reinforcement
-        learning, and AI safety to study preference feedback as data, objective design and
-        implicit bias, robustness and uncertainty quantification, adaptive data collection, and
-        the limits of modular and parameter-efficient updates.
+        conditions. This workshop aims to develop principled foundations for LLM post-training
+        under task evolution. We bring together researchers from machine learning theory,
+        reinforcement learning, and AI safety to develop principled foundations for this.
       </p>
     </div>
   </section>

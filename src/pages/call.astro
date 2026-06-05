@@ -5,25 +5,58 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Call for Papers">
   <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">Call for Papers</h1>
   <p class="text-gray-500 dark:text-gray-400 mb-10">
-    Workshop on Foundations of LLM Post-Training in Changing Environments @ SomeConference 2026
+    Workshop on Foundations of LLM Post-Training in Changing Environments @ <a href="https://neurips.cc" target="_blank" rel="noopener noreferrer" class="hover:underline text-gray-500 dark:text-gray-400">NeurIPS 2026</a>
   </p>
+
+  <!-- Motivation -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Motivation and Timeliness</h2>
+    <div class="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+      <p>
+        LLMs are inherently multitask systems, capable of performing a wide range of tasks
+        using a single set of parameters. These models are adapted to specific downstream tasks
+        and usage contexts through post-training, for example via fine-tuning on task-specific
+        data<a href="#ref-1" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>[1]</sup></a>,
+        preference-based updates<a href="#ref-2" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>[2,</sup></a><a href="#ref-3" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>3]</sup></a>,
+        or parameter-efficient adaptation methods<a href="#ref-4" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>[4,</sup></a><a href="#ref-5" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>5]</sup></a>.
+      </p>
+      <p>
+        In practice, downstream tasks addressed through post-training often do not remain fixed
+        after deployment. Their definitions, data, and evaluation criteria can evolve over time
+        as models are used in changing environments and usage contexts. This non-stationarity
+        leads to repeated post-deployment modifications, such as continual or incremental
+        updates<a href="#ref-6" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>[6]</sup></a>.
+        These practices are largely guided by heuristics and empirical validation, with
+        limited theoretical understanding of when adaptation succeeds, when it fails, or how it
+        affects previously learned capabilities.
+      </p>
+      <p>
+        This gap is particularly consequential in safety-critical settings. The{' '}
+        <em>First International AI Safety Report</em>, published in 2025 and endorsed by 96
+        leading experts, identifies the lack of theoretical understanding as a key limitation of
+        current AI safety approaches<a href="#ref-7" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>[7]</sup></a>.
+        As a result, empirical improvements alone are insufficient to reason about robustness
+        under task evolution, unintended regressions, and the limits of safe adaptation. These
+        challenges motivate the need for theoretical and statistical foundations that can support
+        principled post-training in dynamic, real-world environments.
+      </p>
+    </div>
+
+  </section>
 
   <!-- Topics -->
   <section class="mb-12">
-    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Topics of Interest</h2>
+    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Workshop Goals and Topics</h2>
     <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-      We welcome submissions on any topic related to post-training of LLMs in non-stationary
-      or evolving environments, including but not limited to the following themes:
+      We bring together researchers to advance theoretical understanding of LLM post-training
+      under evolving tasks. We welcome submissions on any topic related to post-training of
+      LLMs in non-stationary or evolving environments, including but not limited to:
     </p>
     <div class="space-y-4">
       {[
         {
           title: 'Preference feedback as data',
           body: 'Statistical modeling of preference signals, including identifiability questions, heterogeneous annotators, varying feedback strength, and principled treatments of noise and misspecification.',
-        },
-        {
-          title: 'Objectives and optimization',
-          body: 'Theoretical analysis of post-training objectives and optimization procedures, including regularization, implicit bias, stability, and connections between different preference-based or verifier-guided update rules.',
         },
         {
           title: 'Robustness and valid inference',
@@ -66,7 +99,7 @@ import Layout from '../layouts/Layout.astro';
             { milestone: 'Review Period',                 date: 'September – October 2026',       notes: 'Double-blind' },
             { milestone: 'Author Notification',           date: 'October 2026 (TBA)',             notes: '' },
             { milestone: 'Camera-Ready Deadline',         date: 'November 2026 (TBA)',            notes: 'Non-archival' },
-            { milestone: 'Workshop Date',                 date: 'December 2026 (TBA)',            notes: 'Country, BC' },
+            { milestone: 'Workshop Date',                 date: 'December 2026 (TBA)',            notes: 'Paris, France' },
           ].map(({ milestone, date, notes }) => (
             <tr class="bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
               <td class="px-5 py-3 font-medium text-gray-900 dark:text-gray-100">{milestone}</td>
@@ -86,7 +119,7 @@ import Layout from '../layouts/Layout.astro';
       {[
         {
           title: 'Format',
-          body: 'Papers should be submitted in PDF format using the SomeConference 2026 style file. Long papers may be up to 8 pages excluding references and appendices. Short papers (position papers, work in progress) are up to 4 pages. There is no page limit on references or supplementary material.',
+          body: 'Papers should be submitted in PDF format using the NeurIPS 2026 style file. Long papers may be up to 8 pages excluding references and appendices. Short papers (position papers, work in progress) are up to 4 pages. There is no page limit on references or supplementary material.',
         },
         {
           title: 'Review Process',
@@ -106,6 +139,22 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{body}</p>
         </div>
       ))}
+    </div>
+  </section>
+
+  <!-- References -->
+  <section>
+    <div class="pt-4 border-t border-gray-100 dark:border-gray-800">
+      <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-3">References</p>
+      <ol class="space-y-1.5 text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+        <li id="ref-1">[1] Liu et al. (2025). <a href="https://arxiv.org/abs/2503.16252" target="_blank" rel="noopener noreferrer" class="hover:underline">Fin-R1: A Large Language Model for Financial Reasoning through Reinforcement Learning</a>. <em>arXiv:2503.16252</em>.</li>
+        <li id="ref-2">[2] Ouyang et al. (2022). <a href="https://arxiv.org/abs/2203.02155" target="_blank" rel="noopener noreferrer" class="hover:underline">Training Language Models to Follow Instructions with Human Feedback</a>. <em>NeurIPS</em>.</li>
+        <li id="ref-3">[3] Rafailov et al. (2024). <a href="https://arxiv.org/abs/2305.18290" target="_blank" rel="noopener noreferrer" class="hover:underline">Direct Preference Optimization: Your Language Model is Secretly a Reward Model</a>. <em>NeurIPS</em>.</li>
+        <li id="ref-4">[4] Hu et al. (2022). <a href="https://arxiv.org/abs/2106.09685" target="_blank" rel="noopener noreferrer" class="hover:underline">LoRA: Low-Rank Adaptation of Large Language Models</a>. <em>ICLR</em>.</li>
+        <li id="ref-5">[5] Zhang, Liu &amp; Chen (2025). <a href="https://arxiv.org/abs/2502.01235" target="_blank" rel="noopener noreferrer" class="hover:underline">LoRA-One: One-Step Full Gradient Could Suffice for Fine-Tuning Large Language Models</a>. <em>arXiv:2502.01235</em>.</li>
+        <li id="ref-6">[6] Shi et al. (2025). <a href="https://arxiv.org/abs/2404.16789" target="_blank" rel="noopener noreferrer" class="hover:underline">Continual Learning of Large Language Models: A Comprehensive Survey</a>. <em>ACM Computing Surveys</em>.</li>
+        <li id="ref-7">[7] Bengio et al. (2025). <a href="https://arxiv.org/abs/2501.17805" target="_blank" rel="noopener noreferrer" class="hover:underline">International AI Safety Report</a>. <em>arXiv:2501.17805</em>.</li>
+      </ol>
     </div>
   </section>
 </Layout>

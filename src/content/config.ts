@@ -7,6 +7,7 @@ const speakers = defineCollection({
     affiliation: z.string(),
     talkTitle: z.string(),
     role: z.string().optional(),
+    confirmed: z.boolean().default(false),
     url: z.string().url().optional(),
     photo: z.string().optional(),
     order: z.number().default(99),
