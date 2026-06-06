@@ -9,4 +9,5 @@ photo: "https://www.ifi.uzh.ch/contacts/ifi/alpi/gramponi/photo/gionew.jpeg.jpeg
 order: 3
 ---
 
-Works on safe and robust reinforcement learning in non-stationary settings; her research connects directly to the workshop's emphasis on robustness, feedback loops, and safety-relevant failure modes under task evolution.
+Tenure-track Assistant Professor at the University of Zurich and affiliated professor at the ETH AI Center; her research spans multi-agent reinforcement learning, equilibrium learning from data, preference-based and inverse RL, and robust decision-making. Recipient of an SNSF Starting Grant (2025).
+

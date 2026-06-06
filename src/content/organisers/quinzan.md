@@ -4,7 +4,7 @@ affiliation: "University of Oxford"
 title: "Senior Research Associate"
 url: "https://sites.google.com/view/fquinz/home"
 role: "organiser"
-photo: "https://lh3.googleusercontent.com/sitesv/AA5AbUBms_EOqCbEMyNa8D0EYl83DZrM8OsHmmZ6Tjcj5sl9MtYWnRQBWRUE-Yo2l0WE9IborA3EJXXIus9ypN0CJwRt2NkVZRuwR1cxvvDb-mCua9lPuBfkposoHq9aaQCnA9g29PU7wBNW_KpDUankdcehdiz49DqOH_jYn5L-K1LJ-RAxWg7EBa6nsywpTh22LiSapWUTbAEfA-qaGo2rgFrjRgB3ReoSPjUt3zgN0JE=w1280"
+photo: "https://lh3.googleusercontent.com/sitesv/AA5AbUAJQrdJKPYFfRirA7AhJXSawscDHjTDk39r3M7FtzcJUI6k2wVIxspJ-eQOZQCB9k3zTwQ5Qw-DD-1IcwaNOz6aB4LGaPyIqgrFXjrvPe-nsMXHZYOg4oUC0E9yD3D1ZT5Ps7uamfxYKKanr11ISpCFsNGLCc-sTMe0rpVgNYqNaZZiS9sDN3Qh7RGigBdHuaZJm7me5epzSrA7PyuegQgXqt371C0_HiHnQgYd6Og=w1280"
 order: 1
 ---
 

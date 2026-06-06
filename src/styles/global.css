@@ -3,8 +3,46 @@
 /* Class-based dark mode — toggled by JS */
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  /* Academic serif throughout — overrides Tailwind's font-sans so no component needs changing */
+  --font-family-sans:   "EB Garamond", Palatino, "Palatino Linotype", Georgia, serif;
+  --font-family-serif:  "EB Garamond", Palatino, "Palatino Linotype", Georgia, serif;
+  --font-family-mono:   "Courier New", Courier, ui-monospace, monospace;
+
+  /* Classic academic blue replaces indigo site-wide */
+  --color-indigo-50:  #f0f4fa;
+  --color-indigo-100: #dce6f4;
+  --color-indigo-200: #b9cde9;
+  --color-indigo-300: #7fa3d4;
+  --color-indigo-400: #4d7ec0;
+  --color-indigo-500: #2b5eaa;
+  --color-indigo-600: #1a4fa0;
+  --color-indigo-700: #143d80;
+  --color-indigo-800: #0e2d60;
+  --color-indigo-900: #0a1f40;
+  --color-indigo-950: #060f20;
+}
+
 @layer base {
   html {
+    /* 17 px base — closer to a paper's 10–11 pt at reading distance */
+    font-size: 17px;
     scroll-behavior: smooth;
+    /* Subpixel rendering looks better on serif than Tailwind's antialiased */
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
+
+  body {
+    font-variant-ligatures: common-ligatures;
+    font-feature-settings: "liga" 1, "kern" 1;
+    letter-spacing: 0.01em;
+  }
+
+  /* Citation superscripts */
+  sup {
+    font-size: 0.65em;
+    line-height: 0;
+    vertical-align: super;
   }
 }

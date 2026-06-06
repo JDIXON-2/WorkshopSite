@@ -1,12 +1,12 @@
 ---
 name: "Gergely Neu"
-affiliation: "University Pompeu Fabra"
+affiliation: "Universitat Pompeu Fabra"
 talkTitle: "WIP"
-role: "Research Professor"
-confirmed: flase
+role: "ICREA Research Professor"
+confirmed: false
 url: "https://cs.bme.hu/~gergo/index.html"
-photo: ""
+photo: "https://cs.bme.hu/~gergo/gergo3.jpg"
 order: 3
 ---
 
-A Machine learning researcher specialising in the theoretical foundations of sequential decision-making. Research focuses on online optimisation, bandit problems, and reinforcement learning theory, with an emphasis on developing algorithms that offer rigorous computational and statistical performance guarantees.
+ICREA Research Professor in the Statistics, Probability, and Machine Learning group at Universitat Pompeu Fabra; his research spans online optimisation, bandit problems, offline and inverse reinforcement learning, and generalization theory. Recipient of ERC Consolidator and Starting Grants, the Bosch AI Young Researcher Award, and a Google Faculty Research Award.

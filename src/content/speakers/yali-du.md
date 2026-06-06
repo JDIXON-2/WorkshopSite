@@ -9,4 +9,5 @@ photo: "https://yalidu.github.io/images/yalidu.png"
 order: 2
 ---
 
-Works on reinforcement learning and multi-agent systems; her research on reward design and learning under uncertainty contributes to the workshop's interest in preference feedback modeling and adaptive data collection.
+Heads the Distributed AI Group and Cooperative AI Lab at King’s College London. Her research develops cooperative and safe AI agents with a focus on scalable multi-agent learning, human–AI coordination, and value alignment. Du is also a Turing Fellow, ELLIS Member, AAAI New Faculty Highlights Award recipient, and named a Rising Star in AI by KAUST.
+

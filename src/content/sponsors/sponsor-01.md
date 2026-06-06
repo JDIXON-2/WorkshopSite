@@ -1,6 +1,6 @@
 ---
 name: "Some AI Lab"
-tier: "platinum"
+tier: "gold"
 url: "https://example.com"
 order: 1
 ---

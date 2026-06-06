@@ -5,128 +5,126 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title="Home">
-  <!-- Hero -->
-  <section class="py-16 sm:py-24 text-center">
-    <p class="text-sm font-semibold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-4">
+  <!-- Title block -->
+  <section class="pt-10 pb-8 border-b border-gray-200 dark:border-gray-700 mb-10">
+    <p class="text-sm uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3">
       NeurIPS 2026 Workshop
     </p>
-    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight max-w-3xl mx-auto">
+    <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight mb-3">
       Foundations of LLM Post-Training<br class="hidden sm:block" /> in Changing Environments
     </h1>
-    <p class="mt-4 text-lg text-indigo-600 dark:text-indigo-400 font-medium">
-      <a href="https://neurips.cc" target="_blank" rel="noopener noreferrer" class="hover:underline">NeurIPS</a> 2026 &middot; Paris, France
+    <p class="text-base text-gray-500 dark:text-gray-400 mb-6">
+      <a href="https://neurips.cc" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2 decoration-1">NeurIPS</a> 2026 &middot; Paris, France
     </p>
-    <div class="mt-8 flex flex-wrap justify-center gap-3">
-      <a href={`${base}/call/`} class="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 text-sm font-semibold transition-colors shadow-sm">
+    <div class="flex flex-wrap gap-4 text-sm">
+      <a href={`${base}/call/`} class="inline-flex items-center gap-1 border border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 px-4 py-1.5 hover:bg-gray-900 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900 transition-colors">
         Call for Papers &rarr;
       </a>
-      <a href={`${base}/speakers/`} class="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900 px-5 py-2.5 text-sm font-semibold text-gray-700 dark:text-gray-300 transition-colors">
+      <a href={`${base}/speakers/`} class="inline-flex items-center gap-1 border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400 px-4 py-1.5 hover:border-gray-600 dark:hover:border-gray-300 transition-colors">
         Invited Speakers
       </a>
     </div>
   </section>
 
-  <!-- Title image -->
-  <div class="mb-16 rounded-2xl overflow-hidden shadow-md">
+  <!-- Banner image -->
+  <div class="mb-10">
     <img
       src={`${base}/images/other/test_img.JPG`}
       alt="Workshop banner"
-      class="w-full object-cover max-h-72"
+      class="w-full object-cover max-h-64 rounded"
     />
   </div>
 
-  <!-- Partners -->
-  <section class="mb-16">
-    <p class="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6">In Partnership With</p>
-    <div class="flex flex-wrap items-center justify-center gap-10">
+  <!-- Partner logos -->
+  <section class="mb-10 pb-10 border-b border-gray-200 dark:border-gray-700">
+    <p class="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-5 text-center">In Partnership With</p>
+    <div class="flex flex-wrap items-center justify-center gap-8">
       <a href="https://warwick.ac.uk" target="_blank" rel="noopener noreferrer">
-        <img
-          src={`${base}/images/uni%20logos/University_of_Warwick/University_of_Warwick_idvrMZjjfH_1.png`}
-          alt="University of Warwick"
-          class="h-10 object-contain dark:invert"
-        />
+        <img src={`${base}/images/uni%20logos/University_of_Warwick/University_of_Warwick_idvrMZjjfH_1.png`} alt="University of Warwick" class="h-9 object-contain dark:invert opacity-70 hover:opacity-100 transition-opacity" />
       </a>
-      <div class="h-10 w-px bg-gray-200 dark:bg-gray-700"></div>
+      <div class="h-8 w-px bg-gray-200 dark:bg-gray-700"></div>
       <a href="https://www.ox.ac.uk" target="_blank" rel="noopener noreferrer">
-        <img
-          src={`${base}/images/uni%20logos/oxford/Oxford%20rectangle%20Logo%20RGB%20DIGITAL/rectangle%20RGB.png`}
-          alt="University of Oxford"
-          class="h-[68px] object-contain"
-        />
+        <img src={`${base}/images/uni%20logos/oxford/Oxford%20rectangle%20Logo%20RGB%20DIGITAL/rectangle%20RGB.png`} alt="University of Oxford" class="h-[60px] object-contain opacity-70 hover:opacity-100 transition-opacity" />
       </a>
-      <div class="h-10 w-px bg-gray-200 dark:bg-gray-700"></div>
+      <div class="h-8 w-px bg-gray-200 dark:bg-gray-700"></div>
       <a href="https://www.ellis.ox.ac.uk/home" target="_blank" rel="noopener noreferrer">
-        <img
-          src={`${base}/images/ellis_logos/ellis-logo_horizontal_black_2023-OXFORD.png`}
-          alt="Ellison Institute of Technology Oxford"
-          class="block dark:hidden h-10 object-contain"
-        />
-        <img
-          src={`${base}/images/ellis_logos/ellis-logo_horizontal_white_2023-OXFORD.png`}
-          alt="Ellison Institute of Technology Oxford"
-          class="hidden dark:block h-10 object-contain"
-        />
+        <img src={`${base}/images/ellis_logos/ellis-logo_horizontal_black_2023-OXFORD.png`} alt="ELLIS Oxford" class="block dark:hidden h-9 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        <img src={`${base}/images/ellis_logos/ellis-logo_horizontal_white_2023-OXFORD.png`} alt="ELLIS Oxford" class="hidden dark:block h-9 object-contain opacity-70 hover:opacity-100 transition-opacity" />
       </a>
-      <div class="h-10 w-px bg-gray-200 dark:bg-gray-700"></div>
+      <div class="h-8 w-px bg-gray-200 dark:bg-gray-700"></div>
+      <a href="https://sites.google.com/view/ellis-paris/" target="_blank" rel="noopener noreferrer">
+        <img src={`${base}/images/sponsors/ellis_parris_no_background.png`} alt="ELLIS Paris" class="h-9 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+      </a>
+      <div class="h-8 w-px bg-gray-200 dark:bg-gray-700"></div>
       <a href="https://eit.org" target="_blank" rel="noopener noreferrer">
-        <img
-          src={`${base}/images/EIT.png`}
-          alt="Ellison Institute of Technology"
-          class="h-10 object-contain"
-        />
+        <img src={`${base}/images/EIT.png`} alt="Ellison Institute of Technology" class="h-9 object-contain opacity-70 hover:opacity-100 transition-opacity" />
       </a>
     </div>
   </section>
 
-  <!-- Key dates strip -->
-  <section class="grid sm:grid-cols-3 gap-4 mb-16">
-    {[
-      { label: 'Submission Deadline', date: 'September 2026' },
-      { label: 'Author Notification', date: 'October 2026' },
-      { label: 'Workshop Date',       date: 'December 2026' },
-    ].map(({ label, date }) => (
-      <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 text-center shadow-sm">
-        <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">{label}</p>
-        <p class="text-base font-semibold text-gray-900 dark:text-gray-100">{date}</p>
-      </div>
-    ))}
+  <!-- Key dates -->
+  <section class="mb-10 pb-10 border-b border-gray-200 dark:border-gray-700">
+    <h2 class="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-4">Key Dates</h2>
+    <table class="w-full text-sm">
+      <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+        {[
+          { label: 'Submission Deadline', date: 'September 2026' },
+          { label: 'Author Notification',  date: 'October 2026'   },
+          { label: 'Workshop Date',         date: 'December 2026'  },
+        ].map(({ label, date }) => (
+          <tr>
+            <td class="py-2 text-gray-600 dark:text-gray-400 pr-8">{label}</td>
+            <td class="py-2 font-medium text-gray-900 dark:text-gray-100">{date}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   </section>
 
   <!-- Abstract -->
-  <section class="mb-16">
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About the Workshop</h2>
-    <div class="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+  <section class="mb-10 pb-10 border-b border-gray-200 dark:border-gray-700">
+    <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">About the Workshop</h2>
+    <div class="text-gray-600 dark:text-gray-300 leading-relaxed">
       <p>
         Large language models (LLMs) are routinely adapted to downstream applications through
         post-training methods, such as instruction tuning and domain adaption. Yet in
         real-world deployment, downstream tasks rarely remain fixed: objectives shift, data
         distributions drift, feedback signals evolve, and evaluation standards change over time.
         Post-training therefore becomes a process of repeated adaptation in non-stationary
-        environments. Despite its central role in modern foundation models, the theoretical
+        environments. 
+        </p>
+        <p>
+        Despite its central role in modern foundation models, the theoretical
         foundations of this adaptive post-training paradigm remain limited. Current practices
         are largely heuristic, with incomplete understanding of statistical identifiability,
         optimization dynamics, robustness to misspecification, and trade-offs between adaptation
         and capability preservation. These gaps are particularly consequential in safety-critical
         settings, where unintended regressions or feedback loops may arise under evolving
-        conditions. This workshop aims to develop principled foundations for LLM post-training
-        under task evolution. We bring together researchers from machine learning theory,
+        conditions. 
+        </p>
+        <p>
+        This workshop will develop principled foundations for LLM post-training
+        under task evolution. It will bring together researchers from machine learning theory,
         reinforcement learning, and AI safety to develop principled foundations for this.
       </p>
     </div>
   </section>
 
   <!-- Quick links -->
-  <section class="grid sm:grid-cols-2 gap-4">
-    {[
-      { href: `${base}/call/`,       label: 'Call for Papers',      desc: 'Topics, submission guidelines, and key dates.' },
-      { href: `${base}/program/`,    label: 'Workshop Program',     desc: 'Full schedule for the day.' },
-      { href: `${base}/papers/`,     label: 'Accepted Papers',      desc: 'Browse the accepted submissions.' },
-      { href: `${base}/organisers/`, label: 'Organising Committee', desc: 'Meet the team behind the workshop.' },
-    ].map(({ href, label, desc }) => (
-      <a href={href} class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 hover:border-indigo-400 dark:hover:border-indigo-600 shadow-sm hover:shadow-md transition-all group">
-        <span class="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{label} &rarr;</span>
-        <span class="text-sm text-gray-500 dark:text-gray-400 mt-1">{desc}</span>
-      </a>
-    ))}
+  <section>
+    <h2 class="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-4">Workshop Pages</h2>
+    <ul class="space-y-2 text-sm">
+      {[
+        { href: `${base}/call/`,       label: 'Call for Papers',      desc: 'Topics, submission guidelines, and key dates.' },
+        { href: `${base}/program/`,    label: 'Workshop Program',     desc: 'Full schedule for the day.' },
+        { href: `${base}/papers/`,     label: 'Accepted Papers',      desc: 'Browse the accepted submissions.' },
+        { href: `${base}/organisers/`, label: 'Organising Committee', desc: 'Meet the team behind the workshop.' },
+      ].map(({ href, label, desc }) => (
+        <li class="flex gap-3 py-1.5 border-b border-gray-100 dark:border-gray-800 last:border-0">
+          <a href={href} class="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline underline-offset-2 decoration-1 shrink-0">{label}</a>
+          <span class="text-gray-500 dark:text-gray-400">&mdash; {desc}</span>
+        </li>
+      ))}
+    </ul>
   </section>
 </Layout>

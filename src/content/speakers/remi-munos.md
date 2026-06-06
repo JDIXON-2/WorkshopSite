@@ -1,11 +1,11 @@
 ---
 name: "Rémi Munos"
-affiliation: "Google DeepMind"
+affiliation: "Meta FAIR"
 talkTitle: "TBA"
-role: "Senior Researcher"
+role: "Research Scientist"
 url: "https://scholar.google.com/citations?user=OvKEnVwAAAAJ&hl=en"
 photo: "https://images.deepai.org/author-profile/remi-munos-thumb-1602.jpg"
 order: 5
 ---
 
-Has made foundational contributions to reinforcement learning theory and policy optimization; he speaks to the workshop's core questions around optimization dynamics and the theoretical underpinnings of preference-based update rules.
+Research scientist at Meta FAIR with foundational contributions to reinforcement learning theory, MCTS, and bandit theory; his recent work focuses on RL and RLHF for large language models, including preference-based fine-tuning, outcome-based exploration, and inference-time optimisation.
