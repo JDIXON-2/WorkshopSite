@@ -9,5 +9,5 @@ photo: "https://www.ifi.uzh.ch/contacts/ifi/alpi/gramponi/photo/gionew.jpeg.jpeg
 order: 3
 ---
 
-Tenure-track Assistant Professor at the University of Zurich and affiliated professor at the ETH AI Center; her research spans multi-agent reinforcement learning, equilibrium learning from data, preference-based and inverse RL, and robust decision-making. Recipient of an SNSF Starting Grant (2025).
+Assistant Professor and head of the ALPI Lab (UZH), affiliated with the ETH AI Center. She works on safe and robust reinforcement learning in non-stationary settings, multi-agent learning, and imitation learning. Her research on learning from human feedback in multi-agent and bilevel settings, and on safety under task evolution, connects directly to the workshop's emphasis on robustness, feedback loops, and safety-relevant failure modes. She was previously a postdoctoral researcher at the ETH AI Center, advised by Andreas Krause and Niao He.
 

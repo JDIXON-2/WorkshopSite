@@ -2,11 +2,11 @@
 name: "Gergely Neu"
 affiliation: "Universitat Pompeu Fabra"
 talkTitle: "WIP"
-role: "ICREA Research Professor"
+role: "Assistant Professor"
 confirmed: false
 url: "https://cs.bme.hu/~gergo/index.html"
 photo: "https://cs.bme.hu/~gergo/gergo3.jpg"
 order: 3
 ---
 
-ICREA Research Professor in the Statistics, Probability, and Machine Learning group at Universitat Pompeu Fabra; his research spans online optimisation, bandit problems, offline and inverse reinforcement learning, and generalization theory. Recipient of ERC Consolidator and Starting Grants, the Bosch AI Young Researcher Award, and a Google Faculty Research Award.
+Assistant Professor and ERC Starting Grant holder (project ScaleR). He works on online optimisation, bandit problems, and reinforcement learning theory, with a particular focus on non-stationary and adversarial environments. His contributions include regret analysis in changing MDPs, online-to-PAC conversions, and generalisation bounds via regret analysis.

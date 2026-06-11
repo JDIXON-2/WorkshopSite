@@ -16,16 +16,14 @@ import Layout from '../layouts/Layout.astro';
         LLMs are inherently multitask systems, capable of performing a wide range of tasks
         using a single set of parameters. These models are adapted to specific downstream tasks
         and usage contexts through post-training, for example via fine-tuning on task-specific
-        data<a href="#ref-1" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>[1]</sup></a>,
-        preference-based updates<a href="#ref-2" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>[2,</sup></a><a href="#ref-3" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>3]</sup></a>,
-        or parameter-efficient adaptation methods<a href="#ref-4" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>[4,</sup></a><a href="#ref-5" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>5]</sup></a>.
+        data, preference-based updates, or parameter-efficient adaptation methods.
       </p>
       <p>
         In practice, downstream tasks addressed through post-training often do not remain fixed
         after deployment. Their definitions, data, and evaluation criteria can evolve over time
         as models are used in changing environments and usage contexts. This non-stationarity
         leads to repeated post-deployment modifications, such as continual or incremental
-        updates<a href="#ref-6" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>[6]</sup></a>.
+        updates.
         These practices are largely guided by heuristics and empirical validation, with
         limited theoretical understanding of when adaptation succeeds, when it fails, or how it
         affects previously learned capabilities.
@@ -34,7 +32,7 @@ import Layout from '../layouts/Layout.astro';
         This gap is particularly consequential in safety-critical settings. The{' '}
         <em>First International AI Safety Report</em>, published in 2025 and endorsed by 96
         leading experts, identifies the lack of theoretical understanding as a key limitation of
-        current AI safety approaches<a href="#ref-7" class="text-indigo-500 dark:text-indigo-400 hover:underline"><sup>[7]</sup></a>.
+        current AI safety approaches.
         As a result, empirical improvements alone are insufficient to reason about robustness
         under task evolution, unintended regressions, and the limits of safe adaptation. These
         challenges motivate the need for theoretical and statistical foundations that can support
@@ -113,7 +111,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Submission instructions -->
-  <section class="mb-10 pb-10 border-b border-gray-200 dark:border-gray-700">
+  <section class="mb-10">
     <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Submission Instructions</h2>
     <div class="space-y-0">
       {[
@@ -142,19 +140,4 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- References -->
-  <section>
-    <div class="pt-4 border-t border-gray-100 dark:border-gray-800">
-      <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-3">References</p>
-      <ol class="space-y-1.5 text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-        <li id="ref-1">[1] Liu et al. (2025). <a href="https://arxiv.org/abs/2503.16252" target="_blank" rel="noopener noreferrer" class="hover:underline">Fin-R1: A Large Language Model for Financial Reasoning through Reinforcement Learning</a>. <em>arXiv:2503.16252</em>.</li>
-        <li id="ref-2">[2] Ouyang et al. (2022). <a href="https://arxiv.org/abs/2203.02155" target="_blank" rel="noopener noreferrer" class="hover:underline">Training Language Models to Follow Instructions with Human Feedback</a>. <em>NeurIPS</em>.</li>
-        <li id="ref-3">[3] Rafailov et al. (2024). <a href="https://arxiv.org/abs/2305.18290" target="_blank" rel="noopener noreferrer" class="hover:underline">Direct Preference Optimization: Your Language Model is Secretly a Reward Model</a>. <em>NeurIPS</em>.</li>
-        <li id="ref-4">[4] Hu et al. (2022). <a href="https://arxiv.org/abs/2106.09685" target="_blank" rel="noopener noreferrer" class="hover:underline">LoRA: Low-Rank Adaptation of Large Language Models</a>. <em>ICLR</em>.</li>
-        <li id="ref-5">[5] Zhang, Liu &amp; Chen (2025). <a href="https://arxiv.org/abs/2502.01235" target="_blank" rel="noopener noreferrer" class="hover:underline">LoRA-One: One-Step Full Gradient Could Suffice for Fine-Tuning Large Language Models</a>. <em>arXiv:2502.01235</em>.</li>
-        <li id="ref-6">[6] Shi et al. (2025). <a href="https://arxiv.org/abs/2404.16789" target="_blank" rel="noopener noreferrer" class="hover:underline">Continual Learning of Large Language Models: A Comprehensive Survey</a>. <em>ACM Computing Surveys</em>.</li>
-        <li id="ref-7">[7] Bengio et al. (2025). <a href="https://arxiv.org/abs/2501.17805" target="_blank" rel="noopener noreferrer" class="hover:underline">International AI Safety Report</a>. <em>arXiv:2501.17805</em>.</li>
-      </ol>
-    </div>
-  </section>
 </Layout>
