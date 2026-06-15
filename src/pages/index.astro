@@ -118,7 +118,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         { href: `${base}/call/`,       label: 'Call for Papers',      desc: 'Topics, submission guidelines, and key dates.' },
         { href: `${base}/program/`,    label: 'Workshop Program',     desc: 'Full schedule for the day.' },
         { href: `${base}/papers/`,     label: 'Accepted Papers',      desc: 'Browse the accepted submissions.' },
-        { href: `${base}/organisers/`, label: 'Organising Committee', desc: 'Meet the team behind the workshop.' },
+        { href: `${base}/organisers/`, label: 'Organising Committee', desc: 'The team behind the workshop.' },
       ].map(({ href, label, desc }) => (
         <li class="flex gap-3 py-1.5 border-b border-gray-100 dark:border-gray-800 last:border-0">
           <a href={href} class="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline underline-offset-2 decoration-1 shrink-0">{label}</a>

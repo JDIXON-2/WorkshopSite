@@ -2,7 +2,7 @@
 name: "James Dixon"
 affiliation: "University of Oxford"
 title: "DPhil Student"
-url: "https://eng.ox.ac.uk/about/machine-learning-research-group"
+url: "https://github.com/JDIXON-2"
 photo: "/images/other/headshot.JPG"
 role: "volunteer"
 order: 1
