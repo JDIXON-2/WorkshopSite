@@ -1,7 +1,7 @@
 ---
 name: "Fanghui Liu"
 affiliation: "University of Warwick"
-title: "Assistant Professor"
+title: "Associate Professor"
 url: "https://www.lfhsgre.org/"
 role: "organiser"
 photo: "https://www.lfhsgre.org/images/me.jpg"
