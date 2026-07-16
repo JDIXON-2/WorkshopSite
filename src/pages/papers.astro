@@ -3,20 +3,35 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import PaperCard from '../components/PaperCard.astro';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const papers = (await getCollection('papers')).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Accepted Papers">
   <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">Accepted Papers</h1>
-  <p class="text-gray-500 dark:text-gray-400 mb-10">{papers.length} papers accepted for presentation at WLR 2026.</p>
+  <p class="text-gray-500 dark:text-gray-400 mb-10">
+    {papers.length > 0
+      ? `${papers.length} papers accepted for presentation at FLPT 2026.`
+      : 'No papers have been accepted yet — paper submission is not yet open.'}
+  </p>
 
-  <div class="flex flex-col gap-4">
-    {papers.map(p => (
-      <PaperCard
-        title={p.data.title}
-        authors={p.data.authors}
-        abstract={p.data.abstract}
-      />
-    ))}
-  </div>
+  {papers.length > 0 ? (
+    <div class="flex flex-col gap-4">
+      {papers.map(p => (
+        <PaperCard
+          title={p.data.title}
+          authors={p.data.authors}
+          abstract={p.data.abstract}
+        />
+      ))}
+    </div>
+  ) : (
+    <div class="rounded-lg border border-dashed border-gray-300 dark:border-gray-700 py-12 px-6 text-center">
+      <p class="text-gray-500 dark:text-gray-400">
+        Check back after the submission and review process is complete. See the
+        <a href={`${base}/call/`} class="text-indigo-600 dark:text-indigo-400 hover:underline underline-offset-2 decoration-1">Call for Papers</a>
+        page for key dates.
+      </p>
+    </div>
+  )}
 </Layout>

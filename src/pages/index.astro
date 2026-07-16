@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import KeyDatesProgress from '../components/KeyDatesProgress.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
@@ -63,23 +64,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </section>
 
   <!-- Key dates -->
-  <section class="mb-10 pb-10 border-b border-gray-200 dark:border-gray-700">
-    <h2 class="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-4">Key Dates</h2>
-    <table class="w-full text-sm">
-      <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
-        {[
-          { label: 'Submission Deadline', date: 'September 2026' },
-          { label: 'Author Notification',  date: 'October 2026'   },
-          { label: 'Workshop Date',         date: 'December 2026'  },
-        ].map(({ label, date }) => (
-          <tr>
-            <td class="py-2 text-gray-600 dark:text-gray-400 pr-8">{label}</td>
-            <td class="py-2 font-medium text-gray-900 dark:text-gray-100">{date}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </section>
+  <KeyDatesProgress />
 
   <!-- Abstract -->
   <section class="mb-10 pb-10 border-b border-gray-200 dark:border-gray-700">
