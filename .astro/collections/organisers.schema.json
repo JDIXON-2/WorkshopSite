@@ -25,6 +25,10 @@
           "type": "string",
           "format": "uri"
         },
+        "openreview": {
+          "type": "string",
+          "format": "uri"
+        },
         "photo": {
           "type": "string"
         },

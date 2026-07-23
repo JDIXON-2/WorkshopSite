@@ -3,8 +3,9 @@ name: "Fanghui Liu"
 affiliation: "Shanghai Jiao Tong University"
 title: "Tenure-Track Associate Professor"
 url: "https://www.lfhsgre.org/"
+openreview: "https://openreview.net/profile?id=~Fanghui_Liu1"
 role: "organiser"
-photo: "https://www.lfhsgre.org/images/me.jpg"
+photo: "/images/organisers/liu.jpg"
 order: 5
 ---
 

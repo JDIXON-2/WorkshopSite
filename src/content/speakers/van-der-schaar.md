@@ -1,11 +1,10 @@
 ---
 name: "Mihaela van der Schaar"
 affiliation: "University of Cambridge"
-talkTitle: "WIP"
 role: "John Humphrey Plummer Professor"
 confirmed: true
 url: "https://www.vanderschaar-lab.com/prof-mihaela-van-der-schaar/"
-photo: "https://www.vanderschaar-lab.com/wp-content/uploads/2023/04/mihaela-2023-1.png"
+photo: "/images/speakers/mihaela-van-der-schaar.webp"
 order: 1
 ---
 

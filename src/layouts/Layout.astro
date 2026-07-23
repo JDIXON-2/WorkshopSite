@@ -8,11 +8,24 @@ interface Props {
 }
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const defaultDescription = 'Workshop on Foundations of LLM Post-Training in Changing Environments at NeurIPS 2026 in Paris.';
+const descriptions: Record<string, string> = {
+  Home: defaultDescription,
+  'Call for Papers': 'Topics, submission guidance, and key dates for the PACE 2026 workshop at NeurIPS.',
+  'Invited Speakers': 'Meet the invited speakers for the PACE 2026 workshop on adaptive LLM post-training.',
+  Program: 'The provisional programme for the PACE 2026 workshop at NeurIPS in Paris.',
+  'Accepted Papers': 'Accepted papers for the PACE 2026 workshop at NeurIPS.',
+  Organisers: 'Meet the organising committee behind the PACE 2026 workshop.',
+  Acknowledgements: 'With thanks to those who supported the PACE 2026 workshop.',
+};
 
 const {
   title,
-  description = 'Workshop on Foundations of LLM Post-Training in Changing Environments — NeurIPS 2026',
+  description = descriptions[Astro.props.title] ?? defaultDescription,
 } = Astro.props;
+const pageTitle = `${title} | PACE 2026`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const socialImageURL = new URL(`${base}/images/other/test_img.JPG`, Astro.site ?? Astro.url.origin);
 ---
 
 <!doctype html>
@@ -21,11 +34,23 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PACE 2026" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:image:alt" content="Foundations of LLM Post-Training in Changing Environments workshop" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
-    <title>{title} | FLPT 2026</title>
+    <title>{pageTitle}</title>
     <!-- Runs before paint to avoid flash -->
     <script is:inline>
       (function () {
@@ -43,8 +68,11 @@ const {
     </script>
   </head>
   <body class="flex flex-col min-h-screen font-serif">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-white focus:text-gray-900 focus:px-4 focus:py-2 focus:border focus:border-gray-900">
+      Skip to main content
+    </a>
     <Navbar />
-    <main class="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-8 py-10">
+    <main id="main-content" class="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-8 py-10">
       <slot />
     </main>
     <footer class="border-t border-gray-200 dark:border-gray-800 mt-16">
@@ -96,7 +124,7 @@ const {
       <div class="max-w-4xl mx-auto px-4 sm:px-8 py-4 border-t border-gray-100 dark:border-gray-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500 dark:text-gray-400">
         <p>Foundations of LLM Post-Training in Changing Environments &mdash; <a href="https://neurips.cc" target="_blank" rel="noopener noreferrer" class="hover:underline">NeurIPS</a> 2026</p>
         <div class="text-right">
-          <p>Contact: <a href="mailto:flpt2026@example.com" class="hover:underline">flpt2026@example.com</a></p>
+          <p>Contact: <a href="mailto:EngineeringScience-ELLISNeurIPSWorkshopDec2026@UniOxfordNexus.onmicrosoft.com" class="hover:underline">EngineeringScience-ELLISNeurIPSWorkshopDec2026@UniOxfordNexus.onmicrosoft.com</a></p>
           <p>Built by: <a href="mailto:james.dixon@eng.ox.ac.uk" class="hover:underline">james.dixon@eng.ox.ac.uk</a></p>
         </div>
       </div>

@@ -1,6 +1,6 @@
-# Foundations of LLM Post-Training in Changing Environments (FLPT 2026)
+# Foundations of LLM Post-Training in Changing Environments (PACE 2026)
 
-Website for the **FLPT 2026** workshop, built with [Astro 5](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com), deployed to GitHub Pages.
+Website for the **PACE 2026** workshop, built with [Astro 5](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com), deployed to GitHub Pages.
 
 ## Pages
 
@@ -70,9 +70,9 @@ public/images/
 
 Reference them in content files as `/WorkshopSite/images/...`.
 
-## Calendar file
+## Calendar
 
-The workshop schedule is also available as an iCal file at `public/flpt2026.ics`. Update the dates in that file once the exact workshop date is confirmed.
+The calendar download is intentionally disabled until the exact PACE workshop day and venue are confirmed. When those details are known, generate `public/pace2026.ics` from the programme and enable the button in `src/pages/program.astro`.
 
 ## Deployment
 

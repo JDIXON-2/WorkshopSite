@@ -1,11 +1,10 @@
 ---
 name: "Yee Whye Teh"
 affiliation: "University of Oxford / Google DeepMind"
-talkTitle: "WIP"
 role: "Professor of Statistical Machine Learning"
 confirmed: true
 url: "https://www.stats.ox.ac.uk/~teh/"
-photo: "https://www.stats.ox.ac.uk/~teh/images/meuniv.png"
+photo: "/images/speakers/yee-whye-teh.png"
 order: 2
 ---
 

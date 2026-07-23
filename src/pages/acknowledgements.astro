@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="Acknowledgements">
+  <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-2">Acknowledgements</h1>
+  <p class="text-gray-500 dark:text-gray-400 mb-10">
+    Organising an event of this kind draws on the time, expertise, and goodwill of a great many
+    people. We are deeply grateful to everyone who has helped make PACE 2026 possible, and we
+    would like to extend our particular thanks to:
+  </p>
+
+  <section>
+    <div class="flex flex-wrap gap-6">
+      <a href="https://www.robots.ox.ac.uk/~sjrob/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-5 hover:border-gray-400 dark:hover:border-gray-500 transition-colors">
+        <img src={`${base}/images/other/stephen-roberts.jpg`} alt="Stephen Roberts" width="56" height="56" loading="lazy" decoding="async" class="w-14 h-14 rounded-full object-cover shrink-0 border border-gray-200 dark:border-gray-600" />
+        <div>
+          <p class="font-semibold text-gray-900 dark:text-gray-100 hover:underline underline-offset-2 decoration-1">Stephen Roberts</p>
+          <p class="text-sm text-indigo-600 dark:text-indigo-400">University of Oxford</p>
+        </div>
+      </a>
+    </div>
+  </section>
+</Layout>

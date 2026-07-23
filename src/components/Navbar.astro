@@ -8,20 +8,20 @@ const links = [
   { href: `${base}/program/`,   label: 'Program' },
   { href: `${base}/papers/`,    label: 'Papers' },
   { href: `${base}/organisers/`,label: 'Organisers' },
-  { href: `${base}/sponsors/`,  label: 'Sponsors' },
+  { href: `${base}/acknowledgements/`, label: 'Acknowledgements' },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
 <header class="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-950">
-  <nav class="max-w-4xl mx-auto px-4 sm:px-8 h-12 flex items-center gap-0.5 overflow-x-auto">
+  <nav id="nav-scroll" class="scrollbar-hide max-w-4xl mx-auto px-4 sm:px-8 h-12 flex items-center gap-0.5 overflow-x-auto">
     <a
       href={`${base}/`}
       class="mr-5 text-sm font-bold text-gray-900 dark:text-gray-100 shrink-0 whitespace-nowrap tracking-tight"
       aria-label="Home"
     >
-      FLPT 2026
+      PACE 2026
     </a>
 
     {links.map(({ href, label }) => {
@@ -29,6 +29,7 @@ const currentPath = Astro.url.pathname;
       return (
         <a
           href={href}
+          aria-current={isActive ? 'page' : undefined}
           class:list={[
             'px-2.5 py-1 text-sm whitespace-nowrap transition-colors',
             isActive
@@ -43,7 +44,7 @@ const currentPath = Astro.url.pathname;
 
     <button
       id="theme-toggle"
-      aria-label="Toggle dark mode"
+      aria-label="Switch to dark mode"
       class="ml-auto shrink-0 p-1.5 text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
     >
       <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="hidden dark:block w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -59,10 +60,56 @@ const currentPath = Astro.url.pathname;
   </nav>
 </header>
 
+<style>
+  .scrollbar-hide {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* legacy Edge */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+</style>
+
 <script>
   const btn = document.getElementById('theme-toggle');
+  const updateThemeLabel = () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    btn?.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  };
+
+  updateThemeLabel();
   btn?.addEventListener('click', () => {
     const isDark = document.documentElement.classList.toggle('dark');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateThemeLabel();
   });
+
+  // Native scrollbar is hidden on the nav. Touch devices already get native
+  // swipe-to-scroll from overflow-x-auto; for mouse users, hovering near the
+  // left/right edge pans the view instead (same pattern as the Key Dates
+  // timeline).
+  const scroller = document.getElementById('nav-scroll');
+  const EDGE = 56;
+  const MAX_SPEED = 9;
+  let scrollSpeed = 0;
+
+  scroller?.addEventListener('mousemove', (e) => {
+    const rect = scroller.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    if (x < EDGE) {
+      scrollSpeed = -((EDGE - x) / EDGE) * MAX_SPEED;
+    } else if (x > rect.width - EDGE) {
+      scrollSpeed = ((x - (rect.width - EDGE)) / EDGE) * MAX_SPEED;
+    } else {
+      scrollSpeed = 0;
+    }
+  });
+  scroller?.addEventListener('mouseleave', () => {
+    scrollSpeed = 0;
+  });
+
+  (function autoScrollLoop() {
+    if (scrollSpeed !== 0 && scroller) scroller.scrollLeft += scrollSpeed;
+    requestAnimationFrame(autoScrollLoop);
+  })();
 </script>

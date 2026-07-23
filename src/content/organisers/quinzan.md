@@ -3,8 +3,9 @@ name: "Francesco Quinzan"
 affiliation: "University of Oxford"
 title: "Senior Research Associate"
 url: "https://sites.google.com/view/fquinz/home"
+openreview: "https://openreview.net/profile?id=~Francesco_Quinzan1"
 role: "organiser"
-photo: "https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=BlUWB5MAAAAJ&citpid=27"
+photo: "/images/organisers/quinzan.jpg"
 order: 1
 ---
 

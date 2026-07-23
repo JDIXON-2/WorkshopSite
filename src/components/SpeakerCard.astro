@@ -4,7 +4,7 @@ import { affiliationUrls } from '../data/affiliations';
 interface Props {
   name: string;
   affiliation: string;
-  talkTitle: string;
+  talkTitle?: string;
   role?: string;
   confirmed?: boolean;
   url?: string;
@@ -13,15 +13,21 @@ interface Props {
 }
 
 const { name, affiliation, talkTitle, role, confirmed, url, photo, bio } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const affiliationUrl = affiliationUrls[affiliation];
 const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+const resolvedPhoto = photo?.startsWith('/') ? `${base}${photo}` : photo;
 ---
 
 <div class="flex gap-4 py-6 border-b border-gray-200 dark:border-gray-700 last:border-0">
-  {photo ? (
+  {resolvedPhoto ? (
     <img
-      src={photo}
+      src={resolvedPhoto}
       alt={name}
+      width="64"
+      height="64"
+      loading="lazy"
+      decoding="async"
       class="w-16 h-16 rounded-full object-cover shrink-0 border border-gray-200 dark:border-gray-600 mt-0.5"
     />
   ) : (
@@ -51,7 +57,7 @@ const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase
       <p class="text-sm text-indigo-600 dark:text-indigo-400">{affiliation}</p>
     )}
 
-    <p class="mt-2 text-sm italic text-gray-600 dark:text-gray-400 leading-snug">&ldquo;{talkTitle}&rdquo;</p>
+    {talkTitle && <p class="mt-2 text-sm italic text-gray-600 dark:text-gray-400 leading-snug">&ldquo;{talkTitle}&rdquo;</p>}
     {bio && <p class="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{bio}</p>}
   </div>
 </div>

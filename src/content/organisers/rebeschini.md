@@ -3,8 +3,9 @@ name: "Patrick Rebeschini"
 affiliation: "University of Oxford"
 title: "Full Professor"
 url: "https://www.stats.ox.ac.uk/~rebeschi/"
+openreview: "https://openreview.net/profile?id=~Patrick_Rebeschini1"
 role: "organiser"
-photo: "https://www.stats.ox.ac.uk/~rebeschi/images/bio/random.jpg"
+photo: "/images/organisers/rebeschini.jpg"
 order: 3
 ---
 

@@ -1,11 +1,10 @@
 ---
 name: "Gido M. van de Ven"
 affiliation: "University of Groningen"
-talkTitle: "WIP"
 role: "Assistant Professor"
 confirmed: true
 url: "https://gmvandeven.github.io"
-photo: "https://gmvandeven.github.io/images/photoGidoVanDeVen.jpg"
+photo: "/images/speakers/gido-van-de-ven.jpg"
 order: 3
 ---
 

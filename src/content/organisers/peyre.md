@@ -3,7 +3,8 @@ name: "Gabriel Peyré"
 affiliation: "École Normale Supérieure"
 title: "CNRS Research Director"
 url: "https://www.gpeyre.com"
-photo: "https://avatars.githubusercontent.com/u/5560142?v=4"
+openreview: "https://openreview.net/profile?id=~Gabriel_Peyré2"
+photo: "/images/organisers/peyre.png"
 role: "organiser"
 order: 2
 ---

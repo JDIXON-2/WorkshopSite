@@ -2,7 +2,7 @@
 name: "James Dixon"
 affiliation: "University of Oxford"
 title: "DPhil Student"
-url: "https://github.com/JDIXON-2"
+url: "https://jaedixon.com"
 photo: "/images/other/headshot.JPG"
 role: "volunteer"
 order: 1

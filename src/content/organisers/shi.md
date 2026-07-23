@@ -3,8 +3,9 @@ name: "Chengchun Shi"
 affiliation: "London School of Economics and Political Science"
 title: "Associate Professor"
 url: "https://www.lse.ac.uk/people/chengchun-shi"
+openreview: "https://openreview.net/profile?id=~Chengchun_Shi1"
 role: "organiser"
-photo: "https://callmespring.github.io/profile0.jpg"
+photo: "/images/organisers/shi.jpg"
 order: 4
 ---
 

@@ -5,7 +5,7 @@ const speakers = defineCollection({
   schema: z.object({
     name: z.string(),
     affiliation: z.string(),
-    talkTitle: z.string(),
+    talkTitle: z.string().optional(),
     role: z.string().optional(),
     confirmed: z.boolean().default(false),
     url: z.string().url().optional(),
@@ -43,20 +43,10 @@ const organisers = defineCollection({
     role: z.enum(['organiser', 'advisory', 'volunteer']),
     title: z.string().optional(),
     url: z.string().url().optional(),
+    openreview: z.string().url().optional(),
     photo: z.string().optional(),
     order: z.number().default(99),
   }),
 });
 
-const sponsors = defineCollection({
-  type: 'content',
-  schema: z.object({
-    name: z.string(),
-    tier: z.enum(['platinum', 'gold', 'silver', 'bronze']),
-    logo: z.string().optional(),
-    url: z.string().optional(),
-    order: z.number().default(99),
-  }),
-});
-
-export const collections = { speakers, papers, schedule, organisers, sponsors };
+export const collections = { speakers, papers, schedule, organisers };

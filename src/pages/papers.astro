@@ -11,7 +11,7 @@ const papers = (await getCollection('papers')).sort((a, b) => a.data.order - b.d
   <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">Accepted Papers</h1>
   <p class="text-gray-500 dark:text-gray-400 mb-10">
     {papers.length > 0
-      ? `${papers.length} papers accepted for presentation at FLPT 2026.`
+      ? `${papers.length} papers accepted for presentation at PACE 2026.`
       : 'No papers have been accepted yet — paper submission is not yet open.'}
   </p>
 
