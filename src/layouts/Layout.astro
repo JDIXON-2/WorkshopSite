@@ -11,19 +11,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const defaultDescription = 'Workshop on Foundations of LLM Post-Training in Changing Environments at NeurIPS 2026 in Paris.';
 const descriptions: Record<string, string> = {
   Home: defaultDescription,
-  'Call for Papers': 'Topics, submission guidance, and key dates for the PACE 2026 workshop at NeurIPS.',
-  'Invited Speakers': 'Meet the invited speakers for the PACE 2026 workshop on adaptive LLM post-training.',
-  Program: 'The provisional programme for the PACE 2026 workshop at NeurIPS in Paris.',
-  'Accepted Papers': 'Accepted papers for the PACE 2026 workshop at NeurIPS.',
-  Organisers: 'Meet the organising committee behind the PACE 2026 workshop.',
-  Acknowledgements: 'With thanks to those who supported the PACE 2026 workshop.',
+  'Call for Papers': 'Topics, submission guidance, and key dates for the FLLMPT 2026 workshop at NeurIPS.',
+  'Invited Speakers': 'Meet the invited speakers for the FLLMPT 2026 workshop on adaptive LLM post-training.',
+  Program: 'The provisional programme for the FLLMPT 2026 workshop at NeurIPS in Paris.',
+  'Accepted Papers': 'Accepted papers for the FLLMPT 2026 workshop at NeurIPS.',
+  Organisers: 'Meet the organising committee behind the FLLMPT 2026 workshop.',
+  Acknowledgements: 'With thanks to those who supported the FLLMPT 2026 workshop.',
 };
 
 const {
   title,
   description = descriptions[Astro.props.title] ?? defaultDescription,
 } = Astro.props;
-const pageTitle = `${title} | PACE 2026`;
+const pageTitle = `${title} | FLLMPT 2026`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
 const socialImageURL = new URL(`${base}/images/other/test_img.JPG`, Astro.site ?? Astro.url.origin);
 ---
@@ -36,7 +36,7 @@ const socialImageURL = new URL(`${base}/images/other/test_img.JPG`, Astro.site ?
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="PACE 2026" />
+    <meta property="og:site_name" content="FLLMPT 2026" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />

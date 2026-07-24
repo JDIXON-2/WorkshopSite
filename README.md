@@ -1,6 +1,6 @@
-# Foundations of LLM Post-Training in Changing Environments (PACE 2026)
+# Foundations of LLM Post-Training in Changing Environments (FLLMPT 2026)
 
-Website for the **PACE 2026** workshop, built with [Astro 5](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com), deployed to GitHub Pages.
+Website for the **FLLMPT 2026** workshop, built with [Astro 5](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com), deployed to GitHub Pages.
 
 ## Pages
 
@@ -72,7 +72,7 @@ Reference them in content files as `/WorkshopSite/images/...`.
 
 ## Calendar
 
-The calendar download is intentionally disabled until the exact PACE workshop day and venue are confirmed. When those details are known, generate `public/pace2026.ics` from the programme and enable the button in `src/pages/program.astro`.
+The calendar download is intentionally disabled until the exact FLLMPT workshop day and venue are confirmed. When those details are known, generate `public/pace2026.ics` from the programme and enable the button in `src/pages/program.astro`.
 
 ## Deployment
 
