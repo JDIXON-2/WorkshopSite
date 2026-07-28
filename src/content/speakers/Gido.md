@@ -5,7 +5,7 @@ role: "Assistant Professor"
 confirmed: true
 url: "https://gmvandeven.github.io"
 photo: "/images/speakers/gido-van-de-ven.jpg"
-order: 3
+order: 5
 ---
 
 

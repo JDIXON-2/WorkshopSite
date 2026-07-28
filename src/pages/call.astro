@@ -90,9 +90,9 @@ import Layout from '../layouts/Layout.astro';
         </thead>
         <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
           {[
-            { milestone: 'Submission Portal Opens',        date: 'TBA',                      notes: 'OpenReview' },
-            { milestone: 'Abstract Registration Deadline', date: 'TBA',                      notes: 'AoE' },
-            { milestone: 'Paper Submission Deadline',      date: 'September 2026 (TBA)',     notes: 'AoE — firm' },
+            { milestone: 'Submission Portal Opens',        date: '',                         notes: 'OpenReview — opens ASAP once approved' },
+            { milestone: 'Abstract Registration Deadline', date: '2026/08/23 11:59',         notes: 'AoE equivalent: Aug 22, 23:59 — one week before paper deadline' },
+            { milestone: 'Paper Submission Deadline',      date: '2026/08/30 11:59',         notes: 'AoE — firm (NeurIPS suggested Aug 29 AoE)' },
             { milestone: 'Review Period',                  date: 'September – October 2026', notes: 'Double-blind' },
             { milestone: 'Author Notification',            date: 'October 2026 (TBA)',       notes: '' },
             { milestone: 'Camera-Ready Deadline',          date: 'November 2026 (TBA)',      notes: 'Non-archival' },
@@ -107,6 +107,7 @@ import Layout from '../layouts/Layout.astro';
         </tbody>
       </table>
     </div>
+    <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">All times are GMT unless otherwise specified.</p>
   </section>
 
   <!-- Submission instructions -->

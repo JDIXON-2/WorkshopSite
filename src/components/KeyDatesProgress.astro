@@ -1,13 +1,13 @@
 ---
 // Steps are evenly spaced along the bar (not calendar-proportional) so labels
-// don't bunch up. Exact dates below are placeholders until the TBA dates in
-// the Call for Papers are confirmed — update here when they are.
+// don't bunch up. Remaining TBA dates below are placeholders until confirmed
+// in the Call for Papers — update here when they are.
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const checkpoints = [
-  { label: 'Portal Opens',      dateLabel: 'TBA',            iso: '2026-08-01T00:00:00Z' },
-  { label: 'Abstract Deadline', dateLabel: 'TBA',             iso: '2026-08-15T00:00:00Z' },
-  { label: 'Paper Deadline',    dateLabel: 'September 2026', iso: '2026-09-01T00:00:00Z' },
+  { label: 'Portal Opens',      dateLabel: 'Imminent',       iso: '2026-08-01T00:00:00Z' },
+  { label: 'Abstract Deadline', dateLabel: '23 Aug 2026',    iso: '2026-08-23T11:59:00Z' },
+  { label: 'Paper Deadline',    dateLabel: '30 Aug 2026',    iso: '2026-08-30T11:59:00Z' },
   { label: 'Notification',      dateLabel: 'October 2026',   iso: '2026-10-01T00:00:00Z' },
   { label: 'Camera-Ready',      dateLabel: 'November 2026',  iso: '2026-11-01T00:00:00Z' },
   { label: 'Workshop',          dateLabel: 'December 2026',  iso: '2026-12-01T00:00:00Z' },
@@ -117,7 +117,11 @@ const checkpoints = [
 
   items.forEach((item, i) => {
     const percent = stepPercent(i);
-    const align = percent < 6 ? 'left' : percent > 94 ? 'right' : 'center';
+    // Only the very first/last item anchors by its outer edge instead of
+    // centering — the container can only auto-scroll rightward (scrollLeft
+    // can't go negative), so a centered label at 0% would bleed off the
+    // left edge with no way to reach it.
+    const align = i === 0 ? 'left' : i === n - 1 ? 'right' : 'center';
     const passed = new Date(item.iso).getTime() <= now;
     const above = i % 2 === 0; // alternate labels above / below the track
 
@@ -132,8 +136,11 @@ const checkpoints = [
     dot.style.transform = 'translate(-50%, -50%)';
     dotsHost.appendChild(dot);
 
+    // No-wrap + auto-width keeps every label the same one-line shape
+    // regardless of text length, so labels of different lengths line up
+    // evenly instead of some wrapping to two lines and others not.
     const labelWrap = document.createElement('div');
-    labelWrap.className = `absolute w-28 ${align === 'right' ? 'text-right' : align === 'left' ? 'text-left' : 'text-center'}`;
+    labelWrap.className = `absolute whitespace-nowrap ${align === 'right' ? 'text-right' : align === 'left' ? 'text-left' : 'text-center'}`;
     labelWrap.style.left = `${percent}%`;
     labelWrap.style.top = above ? `${ABOVE_TOP}px` : `${BELOW_TOP}px`;
     labelWrap.style.transform = `translateX(${align === 'right' ? '-100%' : align === 'left' ? '0%' : '-50%'})`;
