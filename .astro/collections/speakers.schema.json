@@ -16,6 +16,10 @@
         "role": {
           "type": "string"
         },
+        "keynote": {
+          "type": "boolean",
+          "default": false
+        },
         "confirmed": {
           "type": "boolean",
           "default": false

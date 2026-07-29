@@ -2,6 +2,7 @@
 name: "Mihaela van der Schaar"
 affiliation: "University of Cambridge"
 role: "John Humphrey Plummer Professor"
+keynote: true
 confirmed: true
 url: "https://www.vanderschaar-lab.com/prof-mihaela-van-der-schaar/"
 photo: "/images/speakers/mihaela-van-der-schaar.webp"

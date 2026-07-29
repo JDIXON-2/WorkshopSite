@@ -7,6 +7,7 @@ const speakers = defineCollection({
     affiliation: z.string(),
     talkTitle: z.string().optional(),
     role: z.string().optional(),
+    keynote: z.boolean().default(false),
     confirmed: z.boolean().default(false),
     url: z.string().url().optional(),
     photo: z.string().optional(),
@@ -40,7 +41,7 @@ const organisers = defineCollection({
   schema: z.object({
     name: z.string(),
     affiliation: z.string(),
-    role: z.enum(['organiser', 'advisory', 'volunteer']),
+    role: z.enum(['lead', 'organiser', 'advisory', 'volunteer']),
     title: z.string().optional(),
     url: z.string().url().optional(),
     openreview: z.string().url().optional(),

@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import SpeakerCard from '../components/SpeakerCard.astro';
 
-const speakers = (await getCollection('speakers')).sort((a, b) => a.data.order - b.data.order);
+const all = (await getCollection('speakers')).sort((a, b) => a.data.order - b.data.order);
+const keynote  = all.filter(s => s.data.keynote);
+const speakers = all.filter(s => !s.data.keynote);
 ---
 
 <Layout title="Invited Speakers">
@@ -12,19 +14,42 @@ const speakers = (await getCollection('speakers')).sort((a, b) => a.data.order -
     We are proud to be hosting the following exemplary speakers.
   </p>
 
-  <div>
-    {speakers.map(s => (
-      <SpeakerCard
-        name={s.data.name}
-        affiliation={s.data.affiliation}
-        talkTitle={s.data.talkTitle}
-        role={s.data.role}
-        confirmed={s.data.confirmed}
-        url={s.data.url}
-        photo={s.data.photo}
-        bio={s.body.trim() || undefined}
-      />
-    ))}
-  </div>
+  {keynote.length > 0 && (
+    <section class="mb-8 pb-2 border-b border-gray-200 dark:border-gray-700">
+      <h2 class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">Keynote Speaker</h2>
+      <div>
+        {keynote.map(s => (
+          <SpeakerCard
+            name={s.data.name}
+            affiliation={s.data.affiliation}
+            talkTitle={s.data.talkTitle}
+            role={s.data.role}
+            confirmed={s.data.confirmed}
+            url={s.data.url}
+            photo={s.data.photo}
+            bio={s.body.trim() || undefined}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section>
+    {keynote.length > 0 && <h2 class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">Invited Speakers</h2>}
+    <div>
+      {speakers.map(s => (
+        <SpeakerCard
+          name={s.data.name}
+          affiliation={s.data.affiliation}
+          talkTitle={s.data.talkTitle}
+          role={s.data.role}
+          confirmed={s.data.confirmed}
+          url={s.data.url}
+          photo={s.data.photo}
+          bio={s.body.trim() || undefined}
+        />
+      ))}
+    </div>
+  </section>
 </Layout>
 

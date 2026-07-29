@@ -4,7 +4,7 @@ affiliation: "University of Oxford"
 title: "Senior Research Associate"
 url: "https://sites.google.com/view/fquinz/home"
 openreview: "https://openreview.net/profile?id=~Francesco_Quinzan1"
-role: "organiser"
+role: "lead"
 photo: "/images/organisers/quinzan.jpg"
 order: 1
 ---
