@@ -90,18 +90,20 @@ import Layout from '../layouts/Layout.astro';
         </thead>
         <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
           {[
-            { milestone: 'Submission Portal Opens',        date: '',                         notes: 'OpenReview — opens ASAP once approved' },
+            { milestone: 'Submission Portal Opens',        date: 'Open',                     notes: 'OpenReview', link: 'https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/FLLMPT#tab-recent-activity' },
             { milestone: 'Abstract Registration Deadline', date: '2026/08/23 11:59',         notes: 'AoE equivalent: Aug 22, 23:59 — one week before paper deadline' },
             { milestone: 'Paper Submission Deadline',      date: '2026/08/30 11:59',         notes: 'AoE — firm (NeurIPS suggested Aug 29 AoE)' },
             { milestone: 'Review Period',                  date: 'September – October 2026', notes: 'Double-blind' },
             { milestone: 'Author Notification',            date: 'October 2026 (TBA)',       notes: '' },
             { milestone: 'Camera-Ready Deadline',          date: 'November 2026 (TBA)',      notes: 'Non-archival' },
             { milestone: 'Workshop Date',                  date: 'December 2026',            notes: 'Paris, France' },
-          ].map(({ milestone, date, notes }) => (
+          ].map(({ milestone, date, notes, link }) => (
             <tr>
               <td class="py-2 pr-8 font-medium text-gray-900 dark:text-gray-100">{milestone}</td>
               <td class="py-2 pr-8 text-indigo-600 dark:text-indigo-400 font-mono text-xs">{date}</td>
-              <td class="py-2 text-gray-500 dark:text-gray-400">{notes}</td>
+              <td class="py-2 text-gray-500 dark:text-gray-400">
+                {link ? <a href={link} target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline">{notes}</a> : notes}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -129,12 +131,23 @@ import Layout from '../layouts/Layout.astro';
         },
         {
           title: 'Submission Portal',
-          body: 'Submissions will be handled via OpenReview. The link will be published on this page when the portal opens.',
+          body: 'Submissions are handled via OpenReview.',
+          link: 'https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/FLLMPT#tab-recent-activity',
         },
-      ].map(({ title, body }) => (
+      ].map(({ title, body, link }) => (
         <div class="border-l-2 border-gray-300 dark:border-gray-600 pl-4 py-2.5">
           <h3 class="font-semibold text-gray-900 dark:text-gray-100">{title}</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mt-0.5">{body}</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mt-0.5">
+            {body}
+            {link && (
+              <>
+                {' '}
+                <a href={link} target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline">
+                  Submit your paper here
+                </a>.
+              </>
+            )}
+          </p>
         </div>
       ))}
     </div>
