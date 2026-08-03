@@ -91,12 +91,12 @@ import Layout from '../layouts/Layout.astro';
         <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
           {[
             { milestone: 'Submission Portal Opens',        date: 'Open',                     notes: 'OpenReview', link: 'https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/FLLMPT#tab-recent-activity' },
-            { milestone: 'Abstract Registration Deadline', date: '2026/08/23 11:59',         notes: 'AoE equivalent: Aug 22, 23:59 — one week before paper deadline' },
-            { milestone: 'Paper Submission Deadline',      date: '2026/08/30 11:59',         notes: 'AoE — firm (NeurIPS suggested Aug 29 AoE)' },
+            { milestone: 'Abstract Registration Deadline', date: '2026/08/23 11:59 GMT',     notes: 'One week before paper deadline' },
+            { milestone: 'Paper Submission Deadline',      date: '2026/08/30 11:59 GMT',     notes: 'Firm deadline' },
             { milestone: 'Review Period',                  date: 'September – October 2026', notes: 'Double-blind' },
             { milestone: 'Author Notification',            date: 'October 2026 (TBA)',       notes: '' },
             { milestone: 'Camera-Ready Deadline',          date: 'November 2026 (TBA)',      notes: 'Non-archival' },
-            { milestone: 'Workshop Date',                  date: 'December 2026',            notes: 'Paris, France' },
+            { milestone: 'Workshop Date',                  date: '12–13 Dec 2026 (TBA)',     notes: 'Paris, France — exact day not yet confirmed' },
           ].map(({ milestone, date, notes, link }) => (
             <tr>
               <td class="py-2 pr-8 font-medium text-gray-900 dark:text-gray-100">{milestone}</td>
@@ -109,7 +109,7 @@ import Layout from '../layouts/Layout.astro';
         </tbody>
       </table>
     </div>
-    <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">All times are GMT unless otherwise specified.</p>
+    <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">All times are GMT.</p>
   </section>
 
   <!-- Submission instructions -->

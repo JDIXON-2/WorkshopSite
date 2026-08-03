@@ -20,6 +20,7 @@ const speakers = all.filter(s => !s.data.keynote);
       <div>
         {keynote.map(s => (
           <SpeakerCard
+            id={s.id}
             name={s.data.name}
             affiliation={s.data.affiliation}
             talkTitle={s.data.talkTitle}
@@ -39,6 +40,7 @@ const speakers = all.filter(s => !s.data.keynote);
     <div>
       {speakers.map(s => (
         <SpeakerCard
+          id={s.id}
           name={s.data.name}
           affiliation={s.data.affiliation}
           talkTitle={s.data.talkTitle}

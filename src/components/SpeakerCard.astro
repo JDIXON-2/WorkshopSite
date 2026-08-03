@@ -10,16 +10,17 @@ interface Props {
   url?: string;
   photo?: string;
   bio?: string;
+  id?: string;
 }
 
-const { name, affiliation, talkTitle, role, confirmed, url, photo, bio } = Astro.props;
+const { name, affiliation, talkTitle, role, confirmed, url, photo, bio, id } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const affiliationUrl = affiliationUrls[affiliation];
 const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
 const resolvedPhoto = photo?.startsWith('/') ? `${base}${photo}` : photo;
 ---
 
-<div class="flex gap-4 py-6 border-b border-gray-200 dark:border-gray-700 last:border-0">
+<div id={id} class="flex gap-4 py-6 border-b border-gray-200 dark:border-gray-700 last:border-0 scroll-mt-6">
   {resolvedPhoto ? (
     <img
       src={resolvedPhoto}
