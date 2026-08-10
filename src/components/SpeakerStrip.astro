@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const speakers = (await getCollection('speakers')).sort((a, b) => a.data.order - b.data.order);
+---
+
+{speakers.length > 0 && (
+  <section class="mb-10 pb-10 border-b border-gray-200 dark:border-gray-700">
+    <h2 class="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-5">Speakers</h2>
+    <div class="flex flex-wrap justify-center gap-x-12 gap-y-6 overflow-x-auto scrollbar-hide">
+      {speakers.map(s => {
+        const resolvedPhoto = s.data.photo?.startsWith('/') ? `${base}${s.data.photo}` : s.data.photo;
+        const initials = s.data.name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+        return (
+          <a href={`${base}/speakers/#${s.id}`} class="flex flex-col items-center gap-2 shrink-0 w-20 text-center group">
+            {resolvedPhoto ? (
+              <img
+                src={resolvedPhoto}
+                alt={s.data.name}
+                width="64"
+                height="64"
+                loading="lazy"
+                decoding="async"
+                class="w-16 h-16 rounded-full object-cover border border-gray-200 dark:border-gray-600 group-hover:opacity-80 transition-opacity"
+              />
+            ) : (
+              <div class="w-16 h-16 rounded-full flex items-center justify-center text-sm font-bold border border-gray-200 dark:border-gray-600 text-gray-500 dark:text-gray-400 group-hover:opacity-80 transition-opacity">
+                {initials}
+              </div>
+            )}
+            <p class="text-xs font-medium text-gray-700 dark:text-gray-300 leading-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 group-hover:underline underline-offset-2 decoration-1">
+              {s.data.name}
+            </p>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+)}
+
+<style>
+  .scrollbar-hide {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* legacy Edge */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+</style>

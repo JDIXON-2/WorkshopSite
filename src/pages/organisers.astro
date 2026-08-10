@@ -7,8 +7,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const resolvePhoto = (photo?: string) => photo?.startsWith('/') ? `${base}${photo}` : photo;
 
 const all = (await getCollection('organisers')).sort((a, b) => a.data.order - b.data.order);
-const leads      = all.filter(o => o.data.role === 'lead');
-const organisers = all.filter(o => o.data.role === 'organiser');
+const organisers = all.filter(o => o.data.role === 'lead' || o.data.role === 'organiser');
 const advisory   = all.filter(o => o.data.role === 'advisory');
 const volunteers = all.filter(o => o.data.role === 'volunteer');
 
@@ -19,67 +18,6 @@ const bodyMap = Object.fromEntries(rendered.map(r => [r.id, r.Content]));
 <Layout title="Organisers">
   <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-2">Organising Committee</h1>
   <p class="text-gray-500 dark:text-gray-400 mb-8">The team behind FLLMPT 2026.</p>
-
-  <!-- Lead organisers -->
-  {leads.length > 0 && (
-    <section class="mb-10 pb-10 border-b border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">Lead Organisers</h2>
-      <div>
-        {leads.map(o => {
-          const initials = o.data.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
-          const Content = bodyMap[o.id];
-          return (
-            <div class="flex gap-4 py-5 border-b border-gray-100 dark:border-gray-800 last:border-0">
-              {o.data.photo ? (
-                <img
-                  src={resolvePhoto(o.data.photo)}
-                  alt={o.data.name}
-                  width="56"
-                  height="56"
-                  loading="lazy"
-                  decoding="async"
-                  class="w-14 h-14 rounded-full object-cover shrink-0 border border-gray-200 dark:border-gray-600 mt-0.5"
-                />
-              ) : (
-                <div class="w-14 h-14 rounded-full shrink-0 mt-0.5 flex items-center justify-center text-base font-bold border border-gray-200 dark:border-gray-600 text-gray-500 dark:text-gray-400">
-                  {initials}
-                </div>
-              )}
-              <div class="min-w-0">
-                <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-                  {o.data.url ? (
-                    <a href={o.data.url} target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-900 dark:text-gray-100 hover:underline underline-offset-2 decoration-1">
-                      {o.data.name}
-                    </a>
-                  ) : (
-                    <span class="font-semibold text-gray-900 dark:text-gray-100">{o.data.name}</span>
-                  )}
-                  {affiliationUrls[o.data.affiliation] ? (
-                    <a href={affiliationUrls[o.data.affiliation]} target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 dark:text-indigo-400 hover:underline underline-offset-2 decoration-1">{o.data.affiliation}</a>
-                  ) : (
-                    <span class="text-sm text-indigo-600 dark:text-indigo-400">{o.data.affiliation}</span>
-                  )}
-                  {o.data.openreview && (
-                    <a href={o.data.openreview} target="_blank" rel="noopener noreferrer" title="OpenReview profile" aria-label={`${o.data.name} on OpenReview`} class="text-gray-400 hover:text-indigo-600 dark:text-gray-500 dark:hover:text-indigo-400">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                        <path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                      </svg>
-                    </a>
-                  )}
-                </div>
-                {o.data.title && <p class="text-sm italic text-gray-500 dark:text-gray-400 mt-0.5">{o.data.title}</p>}
-                {Content && (
-                  <div class="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    <Content />
-                  </div>
-                )}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </section>
-  )}
 
   <!-- Main organisers -->
   <section class="mb-10 pb-10 border-b border-gray-200 dark:border-gray-700">
@@ -113,6 +51,9 @@ const bodyMap = Object.fromEntries(rendered.map(r => [r.id, r.Content]));
                   </a>
                 ) : (
                   <span class="font-semibold text-gray-900 dark:text-gray-100">{o.data.name}</span>
+                )}
+                {o.data.role === 'lead' && (
+                  <span class="text-xs italic text-green-700 dark:text-green-400">(lead organiser)</span>
                 )}
                 {affiliationUrls[o.data.affiliation] ? (
                   <a href={affiliationUrls[o.data.affiliation]} target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 dark:text-indigo-400 hover:underline underline-offset-2 decoration-1">{o.data.affiliation}</a>
