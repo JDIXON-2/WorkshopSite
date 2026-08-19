@@ -114,10 +114,10 @@ const bodyMap = Object.fromEntries(rendered.map(r => [r.id, r.Content]));
     </section>
   )}
 
-  <!-- PhD Student Organisers -->
+  <!-- Additional Organisers -->
   {volunteers.length > 0 && (
     <section>
-      <h2 class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">PhD Student Organisers</h2>
+      <h2 class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">Additional Organisers</h2>
       <div>
         {volunteers.map(o => {
           const initials = o.data.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
