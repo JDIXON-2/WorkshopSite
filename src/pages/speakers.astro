@@ -25,7 +25,6 @@ const speakers = all.filter(s => !s.data.keynote);
             affiliation={s.data.affiliation}
             talkTitle={s.data.talkTitle}
             role={s.data.role}
-            confirmed={s.data.confirmed}
             url={s.data.url}
             photo={s.data.photo}
             bio={s.body.trim() || undefined}
@@ -45,7 +44,6 @@ const speakers = all.filter(s => !s.data.keynote);
           affiliation={s.data.affiliation}
           talkTitle={s.data.talkTitle}
           role={s.data.role}
-          confirmed={s.data.confirmed}
           url={s.data.url}
           photo={s.data.photo}
           bio={s.body.trim() || undefined}

@@ -6,14 +6,13 @@ interface Props {
   affiliation: string;
   talkTitle?: string;
   role?: string;
-  confirmed?: boolean;
   url?: string;
   photo?: string;
   bio?: string;
   id?: string;
 }
 
-const { name, affiliation, talkTitle, role, confirmed, url, photo, bio, id } = Astro.props;
+const { name, affiliation, talkTitle, role, url, photo, bio, id } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const affiliationUrl = affiliationUrls[affiliation];
 const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
@@ -45,9 +44,6 @@ const resolvedPhoto = photo?.startsWith('/') ? `${base}${photo}` : photo;
         </a>
       ) : (
         <span class="font-semibold text-gray-900 dark:text-gray-100">{name}</span>
-      )}
-      {confirmed && (
-        <span class="text-xs italic text-green-700 dark:text-green-400">(confirmed)</span>
       )}
       {role && <span class="text-sm italic text-gray-500 dark:text-gray-400">{role}</span>}
     </div>

@@ -12,7 +12,7 @@ const papers = (await getCollection('papers')).sort((a, b) => a.data.order - b.d
   <p class="text-gray-500 dark:text-gray-400 mb-10">
     {papers.length > 0
       ? `${papers.length} papers accepted for presentation at FLLMPT 2026.`
-      : 'No papers have been accepted yet — paper submission is not yet open.'}
+      : 'No papers have been accepted yet.'}
   </p>
 
   {papers.length > 0 ? (
