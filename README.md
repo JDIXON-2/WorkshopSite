@@ -72,7 +72,7 @@ Reference them in content files as `/WorkshopSite/images/...`.
 
 ## Calendar
 
-The calendar download is intentionally disabled until the exact FLLMPT workshop day and venue are confirmed. When those details are known, generate `public/pace2026.ics` from the programme and enable the button in `src/pages/program.astro`.
+The workshop date is confirmed (Saturday, 12 December 2026, Paris). `public/fllmpt2026.ics` is generated from the programme and linked from the "Add to Calendar" button in `src/pages/program.astro`. If the exact venue or schedule changes, regenerate the `.ics` file to match.
 
 ## Deployment
 

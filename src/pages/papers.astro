@@ -9,11 +9,31 @@ const papers = (await getCollection('papers')).sort((a, b) => a.data.order - b.d
 
 <Layout title="Accepted Papers">
   <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">Accepted Papers</h1>
-  <p class="text-gray-500 dark:text-gray-400 mb-10">
+  <p class="text-gray-500 dark:text-gray-400 mb-6">
     {papers.length > 0
       ? `${papers.length} papers accepted for presentation at FLLMPT 2026.`
       : 'No papers have been accepted yet.'}
   </p>
+
+  <!-- Camera-ready and publication info -->
+  <div class="rounded-lg border border-gray-200 dark:border-gray-700 px-5 py-4 mb-10">
+    <h2 class="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3">Camera-Ready &amp; Publication</h2>
+    <dl class="grid gap-3 sm:grid-cols-2 text-sm mb-4">
+      <div>
+        <dt class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500">Camera-Ready Revision Window</dt>
+        <dd class="text-gray-700 dark:text-gray-300 font-mono text-xs mt-0.5">1 Oct 2026 12:00 (GMT+2) &ndash; 15 Nov 2026 00:00 (GMT+1)</dd>
+      </div>
+      <div>
+        <dt class="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500">Release</dt>
+        <dd class="text-gray-700 dark:text-gray-300 font-mono text-xs mt-0.5">22 Nov 2026 00:00 (GMT+1)</dd>
+      </div>
+    </dl>
+    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+      This workshop is non-archival. Participation in the workshop does not prevent authors from
+      submitting their work to archival venues in the future. Accepted papers will be made
+      publicly available on OpenReview after the camera-ready revision period.
+    </p>
+  </div>
 
   {papers.length > 0 ? (
     <div class="flex flex-col gap-4">
