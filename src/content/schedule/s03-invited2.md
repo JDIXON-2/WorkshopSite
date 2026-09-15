@@ -1,5 +1,5 @@
 ---
-time: "09:55 – 10:40"
+time: "10:25 – 11:10"
 title: "Invited Talk"
 type: "talk"
 speaker: "Yee Whye Teh"

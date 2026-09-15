@@ -1,5 +1,5 @@
 ---
-time: "09:10 – 09:55"
+time: "09:40 – 10:25"
 title: "Keynote"
 type: "talk"
 speaker: "Mihaela van der Schaar"
