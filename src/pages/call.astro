@@ -116,6 +116,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- Submission instructions -->
   <section class="mb-10">
     <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Submission Instructions</h2>
+    <p class="mb-4 text-sm font-medium text-gray-700 dark:text-gray-200">Submissions are now closed.</p>
     <div class="space-y-0">
       {[
         {
@@ -138,7 +139,7 @@ import Layout from '../layouts/Layout.astro';
         },
         {
           title: 'Submission Portal',
-          body: 'Submissions are handled via OpenReview.',
+          body: 'Submissions are now closed. Submissions were handled via OpenReview.',
           link: 'https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/FLLMPT#tab-recent-activity',
         },
         {
@@ -154,7 +155,7 @@ import Layout from '../layouts/Layout.astro';
               <>
                 {' '}
                 <a href={link} target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline">
-                  {linkText ?? 'Submit your paper here'}
+                  {linkText ?? 'View on OpenReview'}
                 </a>.
               </>
             )}

@@ -1,5 +1,5 @@
 ---
-time: "11:10 – 11:40"
+time: "11:00 – 11:30"
 title: "Coffee Break"
 type: "break"
 order: 4

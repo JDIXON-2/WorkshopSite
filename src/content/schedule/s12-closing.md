@@ -1,6 +1,6 @@
 ---
-time: "17:15 – 17:30"
-title: "Closing Remarks & Best Paper Award"
+time: "16:35 – 16:50"
+title: "Closing Remarks"
 type: "closing"
 order: 12
 ---

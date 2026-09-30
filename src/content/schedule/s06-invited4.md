@@ -1,5 +1,5 @@
 ---
-time: "12:25 – 13:10"
+time: "12:05 – 12:40"
 title: "Invited Talk"
 type: "talk"
 speaker: "Giorgia Ramponi"
