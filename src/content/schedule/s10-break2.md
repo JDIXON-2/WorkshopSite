@@ -1,6 +1,6 @@
 ---
 time: "15:05 – 15:35"
-title: "Coffee Break"
+title: "Break"
 type: "break"
 order: 10
 ---
