@@ -12,7 +12,7 @@ const papers = (await getCollection('papers')).sort((a, b) => a.data.order - b.d
   <p class="text-gray-500 dark:text-gray-400 mb-6">
     {papers.length > 0
       ? `${papers.length} papers accepted for presentation at FLLMPT 2026.`
-      : 'No papers have been accepted yet.'}
+      : <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/FLLMPT#tab-recent-activity" class="text-indigo-600 dark:text-indigo-400 hover:underline underline-offset-2 decoration-1">View submissions on OpenReview</a>}
   </p>
 
   <!-- Camera-ready and publication info -->

@@ -1,11 +1,11 @@
 ---
 name: "Valentina Zangirolami"
-affiliation: "University of Milano-Bicocca"
-title: "PhD Student"
+affiliation: "Institute for Applied Mathematics and Information Technologies “Enrico Magenes”, National Research Council"
+title: "Research Fellow"
 url: "https://valentinazangirolami.github.io/"
 photo: "/images/organisers/zangirolami.png"
 role: "volunteer"
 order: 2
 ---
 
-PhD candidate at the University of Milano-Bicocca. Her research interests lie at the intersection of reinforcement learning and statistics, with a focus on partial observability and feedback-driven adaptation.
+Research fellow at Institute for Applied Mathematics and Information Technologies “Enrico Magenes” (CNR) and Statistical Analyst at University of Milano-Bicocca. Her research interests lie at the intersection of reinforcement learning and statistics, with a focus on partial observability and feedback-driven adaptation.

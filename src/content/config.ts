@@ -50,4 +50,12 @@ const organisers = defineCollection({
   }),
 });
 
-export const collections = { speakers, papers, schedule, organisers };
+const announcements = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+  }),
+});
+
+export const collections = { speakers, papers, schedule, organisers, announcements };
